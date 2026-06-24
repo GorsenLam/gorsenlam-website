@@ -1,9 +1,15 @@
+import { HeroSection } from '@/components/HeroSection';
+import { ProductsSection } from '@/components/ProductsSection';
+import { MilestonesSection } from '@/components/MilestonesSection';
+import { ContactSection } from '@/components/ContactSection';
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <p className="text-muted-foreground">
-        Clone target not yet built. Run <code className="font-mono text-foreground">/clone-website</code> to start.
-      </p>
+    <main className="flex flex-col min-h-screen">
+      <HeroSection />
+      <ProductsSection />
+      <MilestonesSection />
+      <ContactSection />
     </main>
   );
 }
