@@ -1,14 +1,16 @@
 import { HeroSection } from '@/components/HeroSection';
-import { ProductsSection } from '@/components/ProductsSection';
-import { MilestonesSection } from '@/components/MilestonesSection';
+import { AboutSection } from '@/components/AboutSection';
+import { CareerSection } from '@/components/CareerSection';
+import { CoursesSection } from '@/components/CoursesSection';
 import { ContactSection } from '@/components/ContactSection';
 
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen">
       <HeroSection />
-      <ProductsSection />
-      <MilestonesSection />
+      <AboutSection />
+      <CareerSection />
+      <CoursesSection />
       <ContactSection />
     </main>
   );

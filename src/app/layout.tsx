@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "孟健 — AI 编程创业者 / 技术作者 / 演讲者",
-  description: "前腾讯 T11 | 前字节跳动 3-1 | Nextfield Labs LLC 创始人 | AI 编程、出海产品与技术写作实践者",
+  title: "林高山 — AI 企业培训师 / 社群主理人 / OPC 夜校发起人",
+  description: "国家认证高级AI训练师 | 5.7万+社群组局官 | 广州OPC夜校发起人 | 帮助20+企业完成AI转型",
 };
 
 export default function RootLayout({
