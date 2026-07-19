@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="林高山培训活动｜AI工作坊、OPC夜校、组局聚会 - 线下来一起搞事">
+<meta name="keywords" content="AI工作坊,OPC夜校,广州AI活动,AI培训,林高山活动">
+<title>培训活动 | 林高山 - 用 AI 的能力，做企业的事</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","PingFang SC",sans-serif;color:#0d0d0d;background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;letter-spacing:-0.005em}
+img{max-width:100%;display:block}
+:root{
+  --ink:#0d0d0d;
+  --subtle:#6e6e73;
+  --line:#e5e5e7;
+  --bg:#f5f5f7;
+  --red:#C8102E;
+  --red-deep:#A00D24;
+  --red-soft:#FFEAEC;
+  --yellow:#FFD400;
+  --black:#0d0d0d;
+}
+a{color:var(--red);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:transparent;transition:all 0.3s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(13,13,13,0.92);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid rgba(255,255,255,0.08)}
+.nav-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:60px}
+.nav-logo{font-size:1.05rem;font-weight:700;color:#fff;letter-spacing:-0.01em;display:flex;align-items:center;gap:0.5rem}
+.nav-logo .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 12px var(--red)}
+.nav-links{display:flex;gap:2.2rem;list-style:none;font-size:0.85rem;font-weight:500}
+.nav-links a{color:#fff;text-decoration:none;transition:opacity 0.15s;opacity:0.85}
+.nav-links a:hover{opacity:1;text-decoration:none}
+.nav-cta{padding:0.5rem 1.2rem;background:var(--red);color:#fff;border-radius:980px;font-size:0.85rem;font-weight:600;text-decoration:none;transition:all 0.15s}
+.nav-cta:hover{background:#fff;color:var(--red);text-decoration:none}
+
+/* Hero */
+.events-hero{position:relative;min-height:60vh;background:var(--red);color:#fff;overflow:hidden;padding:8rem 2rem 4rem;display:flex;flex-direction:column;justify-content:center}
+.events-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 30%, rgba(255,212,0,0.18) 0%, transparent 45%),radial-gradient(circle at 80% 70%, rgba(0,0,0,0.25) 0%, transparent 55%);pointer-events:none}
+.events-hero-inner{max-width:1180px;margin:0 auto;width:100%;position:relative;z-index:2}
+.events-hero h1{font-size:4.5rem;font-weight:800;line-height:0.95;letter-spacing:-0.05em;color:#fff;margin:0 0 1.5rem}
+.events-hero h1 .accent{color:var(--yellow)}
+.events-hero p{font-size:1.3rem;color:rgba(255,255,255,0.85);max-width:600px}
+@media(max-width:640px){.events-hero h1{font-size:2.4rem}.events-hero p{font-size:1.1rem}}
+
+/* Section */
+.section{padding:5rem 2rem}
+.section-inner{max-width:1180px;margin:0 auto}
+.section-title{font-size:2.8rem;font-weight:800;letter-spacing:-0.03em;margin-bottom:1rem}
+.section-title em{font-style:normal;color:var(--red)}
+.section-desc{font-size:1.1rem;color:var(--subtle);margin-bottom:3rem}
+
+/* Event Card */
+.event-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:0;overflow:hidden;margin-bottom:2rem;transition:all 0.2s}
+.event-card:hover{box-shadow:0 12px 40px rgba(0,0,0,0.08);border-color:var(--red)}
+.event-card-header{padding:2rem 2rem 1rem;display:flex;align-items:flex-start;gap:1.5rem}
+.event-date{flex-shrink:0;width:72px;height:72px;background:var(--red);border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff}
+.event-date .day{font-size:1.8rem;font-weight:800;line-height:1}
+.event-date .month{font-size:0.75rem;opacity:0.85;margin-top:2px}
+.event-info{flex:1}
+.event-status{display:inline-block;font-size:0.75rem;font-weight:700;padding:0.25rem 0.8rem;border-radius:980px;margin-bottom:0.6rem}
+.event-status.upcoming{background:var(--red-soft);color:var(--red)}
+.event-status.ongoing{background:#e6f9ed;color:#1a7f37}
+.event-status.past{background:var(--bg);color:var(--subtle)}
+.event-info h3{font-size:1.5rem;font-weight:800;margin-bottom:0.4rem}
+.event-info .meta{font-size:0.9rem;color:var(--subtle);display:flex;flex-wrap:wrap;gap:1rem}
+.event-info .meta span{display:inline-flex;align-items:center;gap:0.3rem}
+.event-card-body{padding:0 2rem 1.5rem}
+.event-card-body p{font-size:0.95rem;color:#333;line-height:1.7;margin-bottom:1rem}
+.event-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.2rem}
+.event-tag{font-size:0.8rem;padding:0.25rem 0.8rem;border-radius:980px;background:var(--bg);color:var(--subtle)}
+.event-card-footer{padding:1.2rem 2rem;background:var(--bg);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.event-price{font-size:1.3rem;font-weight:800;color:var(--red)}
+.event-price .old{text-decoration:line-through;color:var(--subtle);font-size:0.95rem;font-weight:400;margin-right:0.5rem}
+.event-price .free{color:#1a7f37}
+.btn-event{padding:0.8rem 2rem;background:var(--red);color:#fff;border-radius:980px;font-size:0.95rem;font-weight:700;text-decoration:none;transition:all 0.15s;display:inline-block;border:none;cursor:pointer;font-family:inherit}
+.btn-event:hover{background:var(--red-deep);color:#fff;text-decoration:none}
+.btn-event.outline{background:transparent;color:var(--red);border:2px solid var(--red)}
+.btn-event.outline:hover{background:var(--red);color:#fff}
+
+/* Wechat CTA */
+.wechat-cta{background:var(--ink);color:#fff;padding:4rem 2rem;text-align:center;border-radius:24px;margin:3rem auto;max-width:1080px}
+.wechat-cta h2{font-size:2.2rem;font-weight:800;margin-bottom:1rem}
+.wechat-cta p{color:rgba(255,255,255,0.7);margin-bottom:2rem;font-size:1.1rem}
+.wechat-cta .qr-box{display:inline-block;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:2rem;margin-top:1rem}
+.wechat-cta .qr-box .ico{font-size:3rem;margin-bottom:0.5rem}
+.wechat-cta .qr-box strong{display:block;font-size:1rem;margin-bottom:0.3rem}
+.wechat-cta .qr-box span{font-size:0.85rem;color:rgba(255,255,255,0.6)}
+
+/* Footer */
+.footer-v2{background:var(--ink);color:rgba(255,255,255,0.6);padding:3rem 2rem;text-align:center}
+.footer-v2 .brand{font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:0.5rem}
+.footer-v2 .slogan{font-size:0.9rem;margin-bottom:1rem}
+.footer-v2 .links{display:flex;justify-content:center;gap:2rem;font-size:0.85rem;margin-bottom:1rem}
+.footer-v2 .links a{color:rgba(255,255,255,0.6);text-decoration:none}
+.footer-v2 .links a:hover{color:#fff}
+.footer-v2 .copyright{font-size:0.8rem;color:rgba(255,255,255,0.4)}
+
+/* Wechat FAB */
+.wechat-fab-v2{position:fixed;right:1.5rem;bottom:1.5rem;z-index:200}
+.wechat-fab-v2-btn{width:56px;height:56px;border-radius:50%;background:var(--red);color:#fff;border:none;font-size:1.5rem;cursor:pointer;box-shadow:0 8px 24px rgba(200,16,46,0.4);transition:all 0.15s}
+.wechat-fab-v2-btn:hover{transform:scale(1.1)}
+.wechat-fab-v2-popup{position:absolute;bottom:70px;right:0;background:#fff;border-radius:16px;padding:1.5rem;width:260px;box-shadow:0 12px 40px rgba(0,0,0,0.15)}
+.wechat-fab-v2-popup.hidden{display:none}
+.wechat-fab-v2-popup .pop-title{font-size:1rem;font-weight:800;color:#0d0d0d;margin-bottom:0.4rem}
+.wechat-fab-v2-popup .pop-sub{font-size:0.78rem;color:#6e6e73;margin-top:0.6rem}
+.qr-placeholder{width:200px;height:200px;margin:0.5rem auto;background:var(--bg);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.3rem}
+.qr-placeholder .ico{font-size:2.5rem}
+.qr-placeholder strong{font-size:0.9rem}
+.qr-placeholder span{font-size:0.75rem;color:var(--subtle)}
+
+@media(max-width:640px){
+  .events-hero h1{font-size:2rem}
+  .section-title{font-size:2rem}
+  .event-card-header{flex-direction:column;gap:1rem;padding:1.5rem 1.5rem 1rem}
+  .event-card-body{padding:0 1.5rem 1.5rem}
+  .event-card-footer{padding:1rem 1.5rem;flex-direction:column;align-items:stretch}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ========= NAV ========= -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="logo-dot"></span>林高山</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">关于</a></li>
+      <li><a href="index.html#career">经历</a></li>
+      <li><a href="index.html#courses">课程</a></li>
+      <li><a href="events.html" style="color:var(--yellow);opacity:1">培训活动</a></li>
+      <li><a href="index.html#contact">联系</a></li>
+    </ul>
+    <a href="index.html#contact" class="nav-cta">立即咨询</a>
+  </div>
+</nav>
+
+<!-- ========= HERO ========= -->
+<section class="events-hero" id="top">
+  <div class="events-hero-inner">
+    <h1>线下来<span class="accent">一起搞事</span></h1>
+    <p>AI 工作坊 · OPC 夜校 · 组局聚会 - 线上聊千遍，不如线下见一面</p>
+  </div>
+</section>
+
+<!-- ========= UPCOMING EVENTS ========= -->
+<section class="section" style="background:var(--bg)">
+  <div class="section-inner">
+    <h2 class="section-title">即将<em>开搞</em></h2>
+    <p class="section-desc">报名从速，名额有限</p>
+
+    <!-- Event 1: AI 销售工作坊 -->
+    <div class="event-card">
+      <div class="event-card-header">
+        <div class="event-date">
+          <span class="day">26</span>
+          <span class="month">7月</span>
+        </div>
+        <div class="event-info">
+          <span class="event-status upcoming">🔥 报名中</span>
+          <h3>AI 销售工作坊（体验版）</h3>
+          <div class="meta">
+            <span>📍 广州</span>
+            <span>⏰ 2.5 小时</span>
+            <span>👥 15人小班</span>
+            <span>🎯 适合：销售/创业者/个体</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-card-body">
+        <p>用 AI 把销售全流程提速 3 倍。从客户画像、话术生成、跟进提醒到成交复盘，2.5 小时带你跑通一个真实销售场景。不是听理论，是带着你的产品/服务来，走的时候手里有套能用的 AI 销售工具。</p>
+        <div class="event-tags">
+          <span class="event-tag">AI 销售话术</span>
+          <span class="event-tag">客户画像</span>
+          <span class="event-tag">成交复盘</span>
+          <span class="event-tag">小班实操</span>
+        </div>
+      </div>
+      <div class="event-card-footer">
+        <div class="event-price">
+          <span class="old">¥399</span>¥199<span style="font-size:0.85rem;font-weight:400;color:var(--subtle)">/人</span>
+        </div>
+        <div style="display:flex;gap:0.8rem;flex-wrap:wrap">
+          <a href="#wechat-signup" class="btn-event">🔥 扫码报名</a>
+          <a href="index.html#contact" class="btn-event outline">咨询详情</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Event 2: OPC 夜校 -->
+    <div class="event-card">
+      <div class="event-card-header">
+        <div class="event-date">
+          <span class="day">每月</span>
+          <span class="month">广州</span>
+        </div>
+        <div class="event-info">
+          <span class="event-status upcoming">📍 固定举办</span>
+          <h3>广州 OPC 夜校</h3>
+          <div class="meta">
+            <span>📍 广州</span>
+            <span>⏰ 每月一期</span>
+            <span>👥 精准私域 2000+</span>
+            <span>🎯 适合：创业者/自由职业者</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-card-body">
+        <p>AI 创业方法论线下实战聚会。不教空泛理论，每期围绕一个真实主题：起号、变现、Agent 落地、AI 工具组合拳。来了就是自己人，资源对接、项目共创、踩坑分享，线下见一面比线上聊半年管用。</p>
+        <div class="event-tags">
+          <span class="event-tag">AI 创业</span>
+          <span class="event-tag">线下实战</span>
+          <span class="event-tag">资源对接</span>
+          <span class="event-tag">项目共创</span>
+        </div>
+      </div>
+      <div class="event-card-footer">
+        <div class="event-price"><span class="free">详情咨询</span></div>
+        <div style="display:flex;gap:0.8rem;flex-wrap:wrap">
+          <a href="#wechat-signup" class="btn-event">📋 报名参加</a>
+          <a href="index.html#contact" class="btn-event outline">了解详情</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Event 3: 组局聚会 -->
+    <div class="event-card">
+      <div class="event-card-header">
+        <div class="event-date">
+          <span class="day">TBD</span>
+          <span class="month">待定</span>
+        </div>
+        <div class="event-info">
+          <span class="event-status upcoming">🤝 筹备中</span>
+          <h3>AI 从业者组局聚会</h3>
+          <div class="meta">
+            <span>📍 广州/深圳</span>
+            <span>⏰ 不定期</span>
+            <span>👥 20-30人</span>
+            <span>🎯 适合：AI从业者/技术人/运营</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-card-body">
+        <p>不做 PPT，不搞圆桌论坛。就是一群在 AI 一线干活的人坐下来聊聊：你在做什么、踩了什么坑、有什么资源可以对接。轻松氛围，自由交流，说不定聊着聊着就聊出个合作来。</p>
+        <div class="event-tags">
+          <span class="event-tag">自由交流</span>
+          <span class="event-tag">资源对接</span>
+          <span class="event-tag">项目共创</span>
+          <span class="event-tag">轻松社交</span>
+        </div>
+      </div>
+      <div class="event-card-footer">
+        <div class="event-price"><span class="free">关注动态</span></div>
+        <div style="display:flex;gap:0.8rem;flex-wrap:wrap">
+          <a href="#wechat-signup" class="btn-event">🔔 关注动态</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= PAST EVENTS ========= -->
+<section class="section" style="background:#fff">
+  <div class="section-inner">
+    <h2 class="section-title">往期<em>回顾</em></h2>
+    <p class="section-desc">每一次活动都是一次真实交付</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem">
+      <div style="background:var(--bg);border-radius:16px;padding:1.8rem">
+        <div style="font-size:0.8rem;color:var(--red);font-weight:700;margin-bottom:0.5rem">2026.06 · 广州</div>
+        <h3 style="font-size:1.2rem;font-weight:800;margin-bottom:0.5rem">OPC 夜校 · AI 创业方法论</h3>
+        <p style="font-size:0.9rem;color:var(--subtle)">30+ 创业者线下实战，围绕 AI 起号和变现拆解真实案例</p>
+      </div>
+      <div style="background:var(--bg);border-radius:16px;padding:1.8rem">
+        <div style="font-size:0.8rem;color:var(--red);font-weight:700;margin-bottom:0.5rem">2026.05 · 广州</div>
+        <h3 style="font-size:1.2rem;font-weight:800;margin-bottom:0.5rem">企业 AI+ 内训 · 电力行业</h3>
+        <p style="font-size:0.9rem;color:var(--subtle)">为电力企业团队做 AI 落地内训，从概念到工作流搭建</p>
+      </div>
+      <div style="background:var(--bg);border-radius:16px;padding:1.8rem">
+        <div style="font-size:0.8rem;color:var(--red);font-weight:700;margin-bottom:0.5rem">2026.04 · 线上</div>
+        <h3 style="font-size:1.2rem;font-weight:800;margin-bottom:0.5rem">AI Agent 实战分享</h3>
+        <p style="font-size:0.9rem;color:var(--subtle)">线上直播分享 Agent 智能体在企业场景的真实应用</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= WECHAT SIGNUP ========= -->
+<section class="section" id="wechat-signup" style="background:var(--bg)">
+  <div class="section-inner">
+    <div class="wechat-cta">
+      <h2>扫码报名 / 咨询</h2>
+      <p>加微信备注「活动报名」或「OPC」优先通过</p>
+      <div class="qr-box">
+        <div class="ico">📱</div>
+        <strong>微信二维码</strong>
+        <span>长按识别 / 截图后扫一扫</span>
+      </div>
+      <p style="margin-top:1.5rem;font-size:0.9rem;color:rgba(255,255,255,0.5)">也可以直接填写<a href="index.html#contact" style="color:var(--yellow)">需求表单</a>，我会主动联系你</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========= FOOTER ========= -->
+<footer class="footer-v2">
+  <div class="brand">林高山<span>·</span>AI 企业落地</div>
+  <p class="slogan">用 AI 的能力，做企业的事</p>
+  <div class="links">
+    <a href="index.html#about">关于</a>
+    <a href="index.html#career">经历</a>
+    <a href="index.html#courses">课程</a>
+    <a href="events.html">活动</a>
+    <a href="index.html#contact">联系</a>
+  </div>
+  <p class="copyright">© 2026 GorsenLam · 广州 OPC 夜校 · 国家认证 AI 训练师(高级)</p>
+</footer>
+
+<!-- ========= Wechat FAB ========= -->
+<div class="wechat-fab-v2" id="wechat-fab-v2" style="display:flex">
+  <div class="wechat-fab-v2-popup hidden" id="wechat-popup-v2">
+    <div class="pop-title">加微信 · 报名活动</div>
+    <div class="qr-placeholder">
+      <div class="ico">📱</div>
+      <strong>微信二维码</strong>
+      <span>长按识别 / 截图后扫一扫</span>
+    </div>
+    <div class="pop-sub">备注「活动报名」或「OPC」优先通过</div>
+  </div>
+  <button type="button" class="wechat-fab-v2-btn" id="wechat-btn-v2" aria-label="加微信">💬</button>
+</div>
+
+<script>
+(function(){
+  // Nav scroll
+  var nav = document.getElementById('nav');
+  function updNav(){ if(window.scrollY>80){nav.classList.add('scrolled')}else{nav.classList.remove('scrolled')} }
+  window.addEventListener('scroll', updNav); updNav();
+
+  // Wechat FAB
+  var popup = document.getElementById('wechat-popup-v2');
+  var btn = document.getElementById('wechat-btn-v2');
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    popup.classList.toggle('hidden');
+  });
+  document.addEventListener('click', function(e){
+    if(popup.classList.contains('hidden')) return;
+    if(!popup.contains(e.target) && !btn.contains(e.target)) popup.classList.add('hidden');
+  });
+})();
+</script>
+</body>
+</html>
