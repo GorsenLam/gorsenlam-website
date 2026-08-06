@@ -3,199 +3,236 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="林高山｜用 AI 的能力，做企业的事。10年技术研发 × 4年AI商业化实战，AI落地教程、线下活动、票圈动态。">
+<meta name="description" content="林高山｜用 AI 的能力，做企业的事。10年技术研发 × 4年AI商业化实战。">
+<meta property="og:title" content="林高山 | AI 落地实战">
+<meta property="og:description" content="用 AI 的能力，做企业的事。10年技术研发 × 4年AI商业化实战。">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_CN">
 <title>林高山 | AI 落地实战</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;font-size:16px}
-body{font-family:-apple-system,BlinkMacSystemFont,"Inter","PingFang SC","Helvetica Neue",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;letter-spacing:-0.003em;overflow-x:hidden}
+body{font-family:"Geist","PingFang SC",-apple-system,sans-serif;background:#FAFAFA;color:#0A0A0A;line-height:1.5;-webkit-font-smoothing:antialiased;letter-spacing:-0.01em;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
-.serif{font-family:"Georgia","Times New Roman","Songti SC",serif}
 :root{
-  --bg:#FAF8F5;--bg-alt:#F5F2EC;--card:#fff;
-  --line:#E8E3DA;--line-soft:#F0EBE2;
-  --text:#2d2d2d;--dim:#9a948a;--dimmer:#C4BEB4;
-  --ink:#1B2A4A;--ink-light:#2D3D5F;
-  --gold:#C9A96E;--gold-deep:#B08D4E;--gold-soft:#F5EBD9;
-  --amber:#d97706;
-  --radius:16px;--radius-sm:10px;
-  --maxw:920px;--maxw-narrow:680px;
-  --shadow:0 2px 12px rgba(27,42,74,0.06);
-  --shadow-hover:0 8px 32px rgba(27,42,74,0.10);
-  --transition:all 0.3s cubic-bezier(0.22,0.61,0.36,1);
+  --ink:#0A0A0A;
+  --ink-56:rgba(10,10,10,0.56);
+  --ink-48:rgba(10,10,10,0.48);
+  --ink-40:rgba(10,10,10,0.40);
+  --ink-12:rgba(10,10,10,0.12);
+  --ink-06:rgba(10,10,10,0.06);
+  --bg:#FAFAFA;
+  --bg-alt:#F4F4F4;
+  --card:#FFFFFF;
+  --accent:#C9A96E;
+  --accent-deep:#B08D4E;
+  --accent-soft:rgba(201,169,110,0.12);
+  --radius:16px;
+  --maxw:1080px;
+  --maxw-narrow:720px;
 }
 
 /* ========= NAV ========= */
-.nav{position:sticky;top:0;z-index:100;background:rgba(250,248,245,0.92);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--line)}
-.nav-inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;height:56px}
-.nav-logo{font-family:"Georgia",serif;font-size:1.1rem;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:0.45rem;letter-spacing:-0.02em}
-.nav-logo .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0}
-.nav-links{display:flex;gap:1.8rem;font-size:0.84rem;color:var(--dim);list-style:none}
-.nav-links a{transition:var(--transition);position:relative;padding:0.2rem 0}
+.nav{position:sticky;top:0;z-index:100;background:rgba(250,250,250,0.85);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--ink-06)}
+.nav-inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px}
+.nav-logo{font-family:"Bricolage Grotesque",sans-serif;font-size:1.15rem;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:0.5rem;letter-spacing:-0.02em}
+.nav-logo .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.nav-links{display:flex;gap:2rem;font-size:0.875rem;color:var(--ink-56);font-weight:500;list-style:none}
+.nav-links a{transition:color 0.2s;position:relative;padding:0.25rem 0}
 .nav-links a:hover{color:var(--ink)}
-.nav-links a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform 0.25s}
-.nav-links a:hover::after{transform:scaleX(1)}
-.nav-cta{font-size:0.8rem;padding:0.45rem 1.1rem;background:var(--ink);color:#fff;border-radius:100px;transition:var(--transition);font-weight:500}
-.nav-cta:hover{background:var(--gold-deep);transform:translateY(-1px)}
-@media(max-width:640px){.nav-links{display:none}}
+.nav-cta{font-size:0.875rem;padding:0.5rem 1.25rem;background:var(--ink);color:#fff;border-radius:200px;transition:all 0.25s;font-weight:500}
+.nav-cta:hover{background:var(--accent-deep);transform:translateY(-1px)}
+@media(max-width:640px){.nav-links{display:none}.nav-inner{padding:0 1rem}}
 
 /* ========= HERO ========= */
-.hero{max-width:var(--maxw);margin:0 auto;padding:3.5rem 1.5rem 2rem;text-align:center;position:relative}
-.hero-avatar-wrap{width:120px;height:120px;margin:0 auto 2rem;position:relative;border-radius:50%;padding:4px;background:linear-gradient(135deg,var(--gold),var(--ink));box-shadow:0 6px 28px rgba(27,42,74,0.12)}
-.hero-avatar{width:100%;height:100%;border-radius:50%;object-fit:cover;border:3px solid var(--bg)}
-.hero-avatar-wrap::after{content:'';position:absolute;inset:-10px;border-radius:50%;border:1px solid var(--line);opacity:0.5}
-.hero-eyebrow{font-size:0.74rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-bottom:1.3rem;display:flex;align-items:center;justify-content:center;gap:0.6rem}
-.hero-eyebrow::before,.hero-eyebrow::after{content:'';width:32px;height:1.5px;background:var(--gold)}
-.hero h1{font-family:"Georgia",serif;font-size:3.2rem;font-weight:400;line-height:1.12;letter-spacing:-0.03em;color:var(--ink);margin-bottom:1.2rem}
-.hero h1 em{font-style:italic;color:var(--gold-deep)}
-.hero-sub-en{font-size:0.82rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--dimmer);margin-bottom:1.5rem;font-weight:500}
-.hero-lede{font-size:1.12rem;color:var(--dim);line-height:1.65;max-width:580px;margin:0 auto 1.8rem;font-family:"Georgia",serif;font-style:italic}
-.hero-byline{font-size:0.82rem;color:var(--dim);display:flex;align-items:center;justify-content:center;gap:0.5rem;padding-top:1.3rem;border-top:1px solid var(--line);flex-wrap:wrap}
-.hero-byline strong{color:var(--ink);font-weight:600}
-.hero-byline .sep{color:var(--line)}
-.hero-tags{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:1.6rem;justify-content:center}
-.hero-tag{font-size:0.76rem;padding:0.38rem 0.9rem;background:var(--card);border:1px solid var(--line);border-radius:100px;color:var(--ink-light);transition:var(--transition);font-weight:500}
-.hero-tag:hover{border-color:var(--gold);background:var(--gold-soft);transform:translateY(-2px)}
-@media(max-width:640px){.hero{padding:2.5rem 1.5rem 1.5rem}.hero h1{font-size:2.2rem}.hero-lede{font-size:1rem}}
+.hero{max-width:var(--maxw);margin:0 auto;padding:5rem 2rem 4rem;position:relative}
+.hero-grid{display:grid;grid-template-columns:260px 1fr;gap:4rem;align-items:start}
+.hero-left{text-align:center}
+.hero-avatar-wrap{width:240px;height:300px;margin:0 auto 1.5rem;position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--ink-12)}
+.hero-avatar{width:100%;height:100%;object-fit:cover}
+.hero-name{font-family:"Bricolage Grotesque",sans-serif;font-size:1.5rem;font-weight:600;color:var(--ink);margin-bottom:0.3rem;letter-spacing:-0.02em}
+.hero-title{font-size:0.8rem;color:var(--ink-56);line-height:1.6;font-weight:500}
+.hero-title .sep{color:var(--ink-12);margin:0 0.35rem}
+.hero-cert{font-size:0.72rem;color:var(--accent-deep);font-weight:600;margin-top:0.6rem;letter-spacing:0.02em;font-family:"Geist Mono",monospace}
+.hero-right{padding-top:0.5rem}
+.hero-eyebrow{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent-deep);font-weight:600;margin-bottom:1.5rem;font-family:"Geist Mono",monospace}
+.hero h1{font-family:"Bricolage Grotesque",sans-serif;font-size:3.5rem;font-weight:500;line-height:1.1;letter-spacing:-0.035em;color:var(--ink);margin-bottom:1rem}
+.hero h1 em{font-style:normal;color:var(--accent-deep)}
+.hero-sub-en{font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-40);margin-bottom:1.5rem;font-weight:500;font-family:"Geist Mono",monospace}
+.hero-lede{font-size:1.1rem;color:var(--ink-56);line-height:1.65;max-width:520px;margin-bottom:1.8rem;font-weight:500}
+.hero-tags{display:flex;gap:0.5rem;flex-wrap:wrap}
+.hero-tag{font-size:0.78rem;padding:0.4rem 1rem;background:var(--card);border:1px solid var(--ink-12);border-radius:200px;color:var(--ink);transition:all 0.25s;font-weight:500}
+.hero-tag:hover{border-color:var(--ink);background:var(--ink);color:#fff}
+
+/* hero proof cards */
+.hero-proofs{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;max-width:520px;margin-top:2rem}
+.hero-proof{background:var(--card);border:1px solid var(--ink-06);border-radius:12px;padding:1.1rem 1.2rem;transition:all 0.3s}
+.hero-proof:hover{border-color:var(--ink-12);transform:translateY(-2px)}
+.hero-proof h4{font-family:"Bricolage Grotesque",sans-serif;font-size:0.92rem;font-weight:600;color:var(--ink);margin-bottom:0.35rem;letter-spacing:-0.01em}
+.hero-proof p{font-size:0.76rem;color:var(--ink-56);line-height:1.5;font-weight:500}
+@media(max-width:768px){.hero-proofs{grid-template-columns:1fr;gap:0.5rem}.hero-proof{padding:0.9rem 1rem}}
+@media(max-width:640px){
+  .hero{padding:3rem 1.5rem 2rem}
+  .hero-grid{grid-template-columns:1fr;gap:2rem}
+  .hero h1{font-size:2.4rem}
+  .hero-lede{font-size:1rem}
+  .hero-left{max-width:280px;margin:0 auto}
+}
 
 /* ========= STATS ========= */
-.stats-wrap{background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:2.2rem 0;margin-top:1rem}
-.stats{max-width:var(--maxw);margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;text-align:center;gap:1rem}
+.stats-wrap{border-top:1px solid var(--ink-06);border-bottom:1px solid var(--ink-06);padding:2.5rem 0}
+.stats{max-width:var(--maxw);margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;text-align:left;gap:1rem}
 .stat-col{flex:1}
-.stat-col .v{font-family:"Georgia",serif;font-size:1.8rem;font-weight:700;color:var(--ink);letter-spacing:-0.02em}
-.stat-col .l{font-size:0.74rem;color:var(--dim);margin-top:0.2rem;letter-spacing:0.03em}
-.stat-col .l-en{font-size:0.62rem;color:var(--dimmer);margin-top:0.1rem;letter-spacing:0.08em;text-transform:uppercase}
-@media(max-width:640px){.stats{flex-wrap:wrap;gap:1.2rem}.stat-col{flex:1 1 40%}}
+.stat-col .v{font-family:"Bricolage Grotesque",sans-serif;font-size:2.2rem;font-weight:600;color:var(--ink);letter-spacing:-0.03em;line-height:1}
+.stat-col .l{font-size:0.8rem;color:var(--ink-56);margin-top:0.4rem;font-weight:500}
+.stat-col .l-en{font-size:0.66rem;color:var(--ink-40);margin-top:0.1rem;letter-spacing:0.08em;text-transform:uppercase;font-family:"Geist Mono",monospace}
+@media(max-width:640px){.stats{flex-wrap:wrap;gap:1.5rem;padding:0 1.5rem}.stat-col{flex:1 1 40%}.stat-col .v{font-size:1.8rem}}
 
 /* ========= SECTION ========= */
-.section{max-width:var(--maxw);margin:0 auto;padding:4rem 1.5rem}
-.section-head{margin-bottom:2.5rem}
-.section-num{font-size:0.7rem;color:var(--gold-deep);font-weight:700;letter-spacing:0.15em;margin-bottom:0.5rem}
-.section-title-row{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap}
-.section-title{font-family:"Georgia",serif;font-size:1.7rem;font-weight:400;color:var(--ink);letter-spacing:-0.01em}
-.section-title-en{font-size:0.82rem;color:var(--dimmer);letter-spacing:0.1em;text-transform:uppercase;font-weight:500}
-.section-sub{font-size:0.9rem;color:var(--dim);margin-top:0.5rem;font-style:italic;font-family:"Georgia",serif}
-.section-divider{height:2px;background:var(--ink);width:48px;margin-top:1rem;border-radius:2px}
+.section{max-width:var(--maxw);margin:0 auto;padding:5rem 2rem}
+.section-alt{background:var(--bg-alt)}
+.section-inner{max-width:var(--maxw);margin:0 auto;padding:5rem 2rem}
+.section-num{font-size:0.72rem;color:var(--accent-deep);font-weight:500;letter-spacing:0.1em;margin-bottom:0.8rem;font-family:"Geist Mono",monospace}
+.section-title{font-family:"Bricolage Grotesque",sans-serif;font-size:2.5rem;font-weight:500;color:var(--ink);letter-spacing:-0.03em;line-height:1.15;margin-bottom:0.5rem}
+.section-title-en{font-size:0.85rem;color:var(--ink-40);letter-spacing:0.08em;text-transform:uppercase;font-weight:500;font-family:"Geist Mono",monospace;margin-bottom:1rem}
+.section-sub{font-size:1rem;color:var(--ink-56);font-weight:500;margin-bottom:3rem;max-width:600px}
+@media(max-width:640px){.section,.section-inner{padding:3rem 1.5rem}.section-title{font-size:1.8rem}}
 
-/* ========= STORY (brand manual style) ========= */
-.story-section{background:var(--bg-alt);padding:4rem 0}
-.story-inner{max-width:var(--maxw);margin:0 auto;padding:0 1.5rem}
-.story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
-.story-card{background:var(--card);border-radius:var(--radius);padding:2rem 1.5rem;border:1px solid var(--line-soft);transition:var(--transition);position:relative;overflow:hidden}
-.story-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-4px);border-color:var(--gold)}
-.story-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--ink));opacity:0;transition:opacity 0.3s}
-.story-card:hover::before{opacity:1}
-.story-card .num{font-family:"Georgia",serif;font-size:2rem;color:var(--gold-soft);font-weight:400;margin-bottom:0.8rem;line-height:1}
-.story-card .num span{color:var(--gold-deep)}
-.story-card h3{font-family:"Georgia",serif;font-size:1.1rem;font-weight:600;color:var(--ink);margin-bottom:0.3rem}
-.story-card .h3-en{font-size:0.68rem;color:var(--dimmer);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.8rem}
-.story-card p{font-size:0.86rem;color:var(--dim);line-height:1.6}
-@media(max-width:640px){.story-grid{grid-template-columns:1fr;gap:1rem}}
+/* ========= STORY ========= */
+.story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink-06)}
+.story-card{padding:2.5rem 2rem;border-right:1px solid var(--ink-06);transition:background 0.25s}
+.story-card:last-child{border-right:none}
+.story-card:hover{background:var(--card)}
+.story-card .num{font-family:"Geist Mono",monospace;font-size:0.72rem;color:var(--accent-deep);font-weight:500;margin-bottom:1.5rem;letter-spacing:0.05em}
+.story-card h3{font-family:"Bricolage Grotesque",sans-serif;font-size:1.25rem;font-weight:600;color:var(--ink);margin-bottom:0.3rem;letter-spacing:-0.02em}
+.story-card .h3-en{font-size:0.72rem;color:var(--ink-40);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:1rem;font-family:"Geist Mono",monospace}
+.story-card p{font-size:0.9rem;color:var(--ink-56);line-height:1.65;font-weight:500}
+@media(max-width:768px){.story-grid{grid-template-columns:1fr}.story-card{border-right:none;border-bottom:1px solid var(--ink-06)}.story-card:last-child{border-bottom:none}}
 
-/* ========= SERVICES (pricing cards) ========= */
-.services-section{background:var(--bg-alt);padding:4rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.services-inner{max-width:var(--maxw);margin:0 auto;padding:0 1.5rem}
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:0.5rem}
-.svc-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--line-soft);transition:var(--transition);position:relative;overflow:hidden;display:flex;flex-direction:column;padding:2rem 1.6rem}
-.svc-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-4px);border-color:var(--gold)}
-.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--ink));opacity:0;transition:opacity 0.3s}
-.svc-card:hover::before{opacity:1}
-.svc-card.featured{border-color:var(--gold);border-width:1.5px;box-shadow:0 4px 20px rgba(201,169,110,0.12)}
-.svc-card.featured::before{opacity:1}
-.svc-badge{position:absolute;top:0.8rem;right:0.8rem;font-size:0.6rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:4px;letter-spacing:0.05em;color:#fff}
-.svc-badge-flag{background:var(--gold-deep)}
-.svc-badge-best{background:var(--ink);color:var(--gold)}
-.svc-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1.2rem;background:var(--gold-soft);color:var(--gold-deep)}
-.svc-card h3{font-family:"Georgia",serif;font-size:1.15rem;font-weight:600;color:var(--ink);margin-bottom:0.3rem;letter-spacing:-0.01em}
-.svc-card .h3-en{font-size:0.66rem;color:var(--dimmer);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1rem;font-weight:500}
-.svc-card .desc{font-size:0.84rem;color:var(--dim);line-height:1.6;margin-bottom:1.2rem}
-.svc-price{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px dashed var(--line)}
-.svc-price .amount{font-family:"Georgia",serif;font-size:1.6rem;font-weight:700;color:var(--ink);letter-spacing:-0.02em}
-.svc-price .unit{font-size:0.74rem;color:var(--dim);margin-left:0.2rem}
-.svc-price .tag{font-size:0.66rem;color:var(--gold-deep);background:var(--gold-soft);padding:0.15rem 0.5rem;border-radius:4px;margin-left:0.5rem;font-weight:600;vertical-align:middle}
-.svc-features{list-style:none;flex:1;margin-bottom:1.3rem}
-.svc-features li{font-size:0.8rem;color:var(--dim);line-height:1.5;padding:0.35rem 0;padding-left:1.3rem;position:relative}
-.svc-features li::before{content:'';position:absolute;left:0;top:0.7rem;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+/* ========= SERVICES ========= */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.svc-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--ink-06);transition:all 0.3s;padding:2rem 1.8rem;display:flex;flex-direction:column;position:relative}
+.svc-card:hover{border-color:var(--ink);transform:translateY(-2px)}
+.svc-card.featured{border-color:var(--ink);border-width:2px}
+.svc-badge{position:absolute;top:-0.6rem;left:1.8rem;font-size:0.66rem;font-weight:600;padding:0.25rem 0.7rem;border-radius:200px;letter-spacing:0.03em;color:#fff;background:var(--ink);font-family:"Geist Mono",monospace}
+.svc-badge.flag{background:var(--accent-deep)}
+.svc-card h3{font-family:"Bricolage Grotesque",sans-serif;font-size:1.3rem;font-weight:600;color:var(--ink);margin-bottom:0.3rem;letter-spacing:-0.02em;margin-top:0.5rem}
+.svc-card .h3-en{font-size:0.7rem;color:var(--ink-40);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:1rem;font-family:"Geist Mono",monospace}
+.svc-card .desc{font-size:0.88rem;color:var(--ink-56);line-height:1.6;margin-bottom:1.2rem;font-weight:500}
+.svc-price{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid var(--ink-06)}
+.svc-price .amount{font-family:"Bricolage Grotesque",sans-serif;font-size:1.8rem;font-weight:600;color:var(--ink);letter-spacing:-0.02em}
+.svc-price .unit{font-size:0.78rem;color:var(--ink-56);margin-left:0.2rem;font-weight:500}
+.svc-price .tag{font-size:0.68rem;color:var(--accent-deep);background:var(--accent-soft);padding:0.2rem 0.6rem;border-radius:200px;margin-left:0.4rem;font-weight:600;font-family:"Geist Mono",monospace}
+.svc-features{list-style:none;flex:1;margin-bottom:1.5rem}
+.svc-features li{font-size:0.82rem;color:var(--ink-56);line-height:1.5;padding:0.3rem 0;padding-left:1.2rem;position:relative;font-weight:500}
+.svc-features li::before{content:'';position:absolute;left:0;top:0.7rem;width:5px;height:5px;border-radius:50%;background:var(--accent)}
 .svc-features li strong{color:var(--ink);font-weight:600}
-.svc-cta{display:block;text-align:center;padding:0.7rem 1rem;background:var(--card);border:1px solid var(--ink);color:var(--ink);border-radius:100px;font-size:0.82rem;font-weight:600;transition:var(--transition);margin-top:auto}
+.svc-cta{display:block;text-align:center;padding:0.7rem 1rem;background:transparent;border:1px solid var(--ink);color:var(--ink);border-radius:200px;font-size:0.82rem;font-weight:600;transition:all 0.25s;margin-top:auto}
 .svc-cta:hover{background:var(--ink);color:#fff}
-.svc-card.featured .svc-cta{background:var(--ink);color:#fff;border-color:var(--ink)}
-.svc-card.featured .svc-cta:hover{background:var(--gold-deep);border-color:var(--gold-deep)}
-.svc-note{font-size:0.76rem;color:var(--dimmer);text-align:center;margin-top:1.5rem;font-style:italic;font-family:"Georgia",serif}
+.svc-card.featured .svc-cta{background:var(--ink);color:#fff}
+.svc-card.featured .svc-cta:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+.svc-product-teaser{text-align:center;margin-top:2rem;padding:1.2rem;border:1px dashed var(--ink-12);border-radius:var(--radius);background:transparent}
+.svc-product-teaser .teaser-label{font-size:0.68rem;color:var(--ink-40);font-weight:500;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.3rem;font-family:"Geist Mono",monospace}
+.svc-product-teaser .teaser-text{font-size:0.88rem;color:var(--ink-56);font-weight:500}
+.svc-note{font-size:0.78rem;color:var(--ink-40);text-align:center;margin-top:1.5rem;font-weight:500}
 @media(max-width:768px){.services-grid{grid-template-columns:1fr;gap:1rem}.svc-card.featured{order:-1}}
 @media(min-width:769px) and (max-width:920px){.services-grid{grid-template-columns:1fr 1fr}.svc-card:nth-child(3){grid-column:span 2;max-width:50%;margin:0 auto}}
 
-/* ========= TUTORIALS (card grid) ========= */
-.tut-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-top:0.5rem}
-.tut-card{background:var(--card);border-radius:var(--radius);padding:1.5rem;border:1px solid var(--line-soft);transition:var(--transition);position:relative;display:flex;flex-direction:column}
-.tut-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px);border-color:var(--gold)}
-.tut-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.7rem}
-.tut-num{font-family:"Georgia",serif;font-size:1.3rem;color:var(--gold-soft);font-weight:400;font-style:italic}
-.tut-badge{font-size:0.6rem;font-weight:700;padding:0.15rem 0.5rem;border-radius:4px;letter-spacing:0.04em}
-.tut-badge-new{background:var(--gold);color:#fff}
-.tut-badge-hot{background:var(--ink);color:var(--gold)}
-.tut-card h3{font-size:1.02rem;font-weight:600;color:var(--ink);margin-bottom:0.3rem;line-height:1.35}
-.tut-card .cat{font-size:0.72rem;color:var(--gold-deep);font-weight:600;letter-spacing:0.04em;margin-bottom:0.5rem}
-.tut-card p{font-size:0.84rem;color:var(--dim);line-height:1.55;flex:1}
-.tut-card .arrow{margin-top:0.8rem;font-size:0.8rem;color:var(--gold-deep);font-weight:600;display:flex;align-items:center;gap:0.3rem;transition:gap 0.2s}
-.tut-card:hover .arrow{gap:0.6rem}
-@media(max-width:640px){.tut-grid{grid-template-columns:1fr}}
+/* ========= CASES ========= */
+.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 
-/* ========= EVENTS (card wall) ========= */
-.event-wall{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem}
-.event-card{border-radius:var(--radius);overflow:hidden;position:relative;background:var(--card);box-shadow:var(--shadow);transition:var(--transition);cursor:pointer}
-.event-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px)}
-.event-card img{width:100%;height:220px;object-fit:cover;transition:transform 0.5s;filter:brightness(0.92)}
-.event-card:hover img{transform:scale(1.05);filter:brightness(1)}
-.event-overlay{position:absolute;bottom:0;left:0;right:0;padding:1.2rem 1rem 1rem;background:linear-gradient(0deg,rgba(27,42,74,0.88) 0%,rgba(27,42,74,0.4) 60%,transparent 100%);color:#fff}
-.event-type{font-size:0.66rem;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem}
-.event-card h3{font-size:0.96rem;font-weight:600;line-height:1.3}
-.event-date{font-size:0.74rem;opacity:0.75;margin-top:0.2rem}
+/* ========= METHOD ========= */
+.method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;counter-reset:step}
+.method-card{background:var(--card);border:1px solid var(--ink-06);border-radius:var(--radius);padding:2rem 1.8rem;transition:all 0.3s;position:relative;display:flex;flex-direction:column}
+.method-card:hover{border-color:var(--ink);transform:translateY(-2px)}
+.method-step{font-family:"Geist Mono",monospace;font-size:0.72rem;color:var(--accent-deep);font-weight:600;letter-spacing:0.08em;margin-bottom:1rem}
+.method-card h3{font-family:"Bricolage Grotesque",sans-serif;font-size:1.15rem;font-weight:600;color:var(--ink);margin-bottom:0.8rem;letter-spacing:-0.01em}
+.method-card p{font-size:0.86rem;color:var(--ink-56);line-height:1.6;font-weight:500;margin-bottom:1.2rem}
+.method-outputs{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:auto;padding-top:1rem;border-top:1px solid var(--ink-06)}
+.method-output{font-size:0.7rem;padding:0.25rem 0.7rem;background:var(--accent-soft);color:var(--accent-deep);border-radius:200px;font-weight:600;font-family:"Geist Mono",monospace}
+@media(max-width:768px){.method-grid{grid-template-columns:1fr;gap:1rem}}
+@media(min-width:769px) and (max-width:920px){.method-grid{grid-template-columns:1fr 1fr}.method-card:nth-child(3){grid-column:span 2;max-width:50%;margin:0 auto}.method-card:nth-child(6){grid-column:span 2;max-width:50%;margin:0 auto}}
+.case-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--ink-06);padding:2rem 1.8rem;transition:all 0.3s;display:flex;flex-direction:column}
+.case-card:hover{border-color:var(--ink);transform:translateY(-2px)}
+.case-industry{font-size:0.66rem;font-weight:600;color:var(--accent-deep);background:var(--accent-soft);padding:0.2rem 0.7rem;border-radius:200px;align-self:flex-start;letter-spacing:0.05em;margin-bottom:1rem;font-family:"Geist Mono",monospace}
+.case-card h3{font-family:"Bricolage Grotesque",sans-serif;font-size:1.15rem;font-weight:600;color:var(--ink);margin-bottom:1rem;line-height:1.35;letter-spacing:-0.01em}
+.case-pain{font-size:0.84rem;color:var(--ink-56);line-height:1.6;margin-bottom:0.8rem;padding-left:0.8rem;border-left:2px solid var(--ink-12);font-weight:500}
+.case-pain::before{content:'痛点  ';font-size:0.64rem;color:var(--ink-40);font-weight:600;letter-spacing:0.05em;font-family:"Geist Mono",monospace}
+.case-solution{font-size:0.84rem;color:var(--ink);line-height:1.6;margin-bottom:1.2rem;font-weight:500}
+.case-solution::before{content:'方案  ';font-size:0.64rem;color:var(--accent-deep);font-weight:600;letter-spacing:0.05em;font-family:"Geist Mono",monospace}
+.case-result{display:flex;gap:1.5rem;padding-top:1rem;border-top:1px solid var(--ink-06);margin-top:auto}
+.case-metric{text-align:left;flex:1}
+.case-metric .mv{font-family:"Bricolage Grotesque",sans-serif;font-size:1.6rem;font-weight:600;color:var(--ink);letter-spacing:-0.02em;line-height:1}
+.case-metric .ml{font-size:0.68rem;color:var(--ink-56);margin-top:0.3rem;font-weight:500}
+.case-role{font-size:0.78rem;color:var(--ink-56);line-height:1.5;margin-bottom:0.8rem;font-weight:500;padding-left:0.8rem;border-left:2px solid var(--accent)}
+.case-role::before{content:'我的角色  ';font-size:0.64rem;color:var(--accent-deep);font-weight:600;letter-spacing:0.05em;font-family:"Geist Mono",monospace}
+.case-tags{display:flex;flex-wrap:wrap;gap:0.35rem;margin-bottom:1rem}
+.case-tag{font-size:0.66rem;padding:0.2rem 0.6rem;border-radius:200px;background:var(--ink-06);color:var(--ink-56);font-weight:500;font-family:"Geist Mono",monospace}
+@media(max-width:768px){.cases-grid{grid-template-columns:1fr;gap:1rem}}
+
+/* ========= EVENTS ========= */
+.event-wall{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.event-card{border-radius:var(--radius);overflow:hidden;position:relative;background:var(--card);border:1px solid var(--ink-06);transition:all 0.3s;cursor:pointer}
+.event-card:hover{border-color:var(--ink);transform:translateY(-2px)}
+.event-card img{width:100%;height:220px;object-fit:cover;filter:brightness(0.88)}
+.event-card:hover img{filter:brightness(1)}
+.event-overlay{position:absolute;bottom:0;left:0;right:0;padding:1.3rem 1.2rem 1.1rem;background:linear-gradient(0deg,rgba(10,10,10,0.85) 0%,rgba(10,10,10,0.3) 70%,transparent 100%);color:#fff}
+.event-type{font-size:0.66rem;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;font-family:"Geist Mono",monospace}
+.event-card h3{font-family:"Bricolage Grotesque",sans-serif;font-size:1rem;font-weight:600;line-height:1.3}
+.event-date{font-size:0.74rem;opacity:0.7;margin-top:0.2rem;font-weight:500}
 .event-card:nth-child(1){grid-column:span 2}
-.event-card:nth-child(1) img{height:280px}
+.event-card:nth-child(1) img{height:300px}
 @media(max-width:640px){.event-wall{grid-template-columns:1fr}.event-card:nth-child(1){grid-column:span 1}.event-card img{height:180px}.event-card:nth-child(1) img{height:200px}}
 
-/* ========= MOMENTS ========= */
-.moment-feed{display:flex;flex-direction:column;gap:1rem}
-.moment-card{background:var(--card);border-radius:var(--radius);padding:1.5rem 1.6rem;box-shadow:var(--shadow);border:1px solid var(--line-soft);transition:var(--transition)}
-.moment-card:hover{box-shadow:var(--shadow-hover)}
-.moment-head{display:flex;align-items:center;gap:0.7rem;margin-bottom:0.8rem}
-.moment-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--ink),var(--gold));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:0.9rem;flex-shrink:0}
-.moment-info{flex:1;min-width:0}
-.moment-name{font-size:0.9rem;font-weight:600;color:var(--ink)}
-.moment-date{font-size:0.72rem;color:var(--dim)}
-.moment-text{font-size:0.9rem;color:var(--text);line-height:1.75}
-.moment-tags{display:flex;gap:0.35rem;margin-top:0.7rem;flex-wrap:wrap}
-.moment-tag{font-size:0.7rem;color:var(--gold-deep);background:var(--gold-soft);padding:0.2rem 0.6rem;border-radius:100px;font-weight:500}
-.moment-actions{display:flex;gap:1.2rem;margin-top:0.9rem;padding-top:0.8rem;border-top:1px solid var(--line-soft);font-size:0.76rem;color:var(--dim)}
-.moment-actions span{display:flex;align-items:center;gap:0.3rem;cursor:pointer;transition:color 0.2s}
-.moment-actions span:hover{color:var(--ink)}
-.moment-like{color:var(--gold-deep)}
+/* ========= FEED ========= */
+.feed-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.feed-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--ink-06);padding:1.8rem 1.5rem;transition:all 0.3s;display:flex;flex-direction:column;cursor:pointer}
+.feed-card:hover{border-color:var(--ink);transform:translateY(-2px)}
+.feed-card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.feed-type{font-size:0.62rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:200px;letter-spacing:0.04em;font-family:"Geist Mono",monospace}
+.feed-type-article{background:var(--accent-soft);color:var(--accent-deep)}
+.feed-type-video{background:rgba(25,103,210,0.08);color:#1967D2}
+.feed-type-guide{background:var(--ink);color:var(--accent)}
+.feed-num{font-family:"Geist Mono",monospace;font-size:0.72rem;color:var(--ink-40);font-weight:500}
+.feed-card h3{font-family:"Bricolage Grotesque",sans-serif;font-size:1.05rem;font-weight:600;color:var(--ink);margin-bottom:0.5rem;line-height:1.35;letter-spacing:-0.01em}
+.feed-card p{font-size:0.82rem;color:var(--ink-56);line-height:1.55;flex:1;font-weight:500}
+.feed-meta{display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid var(--ink-06);font-size:0.74rem;color:var(--ink-40);font-weight:500;font-family:"Geist Mono",monospace}
+.feed-arrow{color:var(--accent-deep);font-weight:600;transition:transform 0.2s}
+.feed-card:hover .feed-arrow{transform:translateX(3px)}
+@media(max-width:768px){.feed-grid{grid-template-columns:1fr;gap:1rem}}
+@media(min-width:769px) and (max-width:920px){.feed-grid{grid-template-columns:1fr 1fr}}
 
 /* ========= CONTACT ========= */
-.contact-section{background:var(--ink);padding:3.5rem 0;margin-top:2rem}
-.contact{max-width:var(--maxw-narrow);margin:0 auto;padding:0 1.5rem;text-align:center}
-.contact .eyebrow{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:1rem}
-.contact h2{font-family:"Georgia",serif;font-size:1.7rem;font-weight:400;color:#fff;margin-bottom:0.6rem}
-.contact p{font-size:0.95rem;color:rgba(255,255,255,0.6);margin-bottom:1.8rem;font-style:italic;font-family:"Georgia",serif}
-.contact-cta{display:inline-flex;align-items:center;gap:0.5rem;padding:0.8rem 1.8rem;background:var(--gold);color:var(--ink);border-radius:100px;font-size:0.9rem;font-weight:600;transition:var(--transition)}
-.contact-cta:hover{background:#fff;transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,169,110,0.3)}
+.contact-section{background:var(--ink);padding:4rem 0}
+.contact{max-width:var(--maxw);margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center}
+.contact .eyebrow{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:1rem;font-family:"Geist Mono",monospace}
+.contact h2{font-family:"Bricolage Grotesque",sans-serif;font-size:2.2rem;font-weight:500;color:#fff;margin-bottom:0.6rem;letter-spacing:-0.03em}
+.contact p{font-size:0.95rem;color:rgba(255,255,255,0.56);font-weight:500}
+.contact-cta{display:inline-flex;align-items:center;gap:0.5rem;padding:0.8rem 2rem;background:var(--accent);color:var(--ink);border-radius:200px;font-size:0.9rem;font-weight:600;transition:all 0.25s;margin-top:1.2rem}
+.contact-cta:hover{background:#fff;transform:translateY(-2px)}
+.contact-qr{width:130px;height:130px;border-radius:var(--radius);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.4rem;flex-shrink:0}
+.contact-qr-icon{font-size:2rem;opacity:0.5}
+.contact-qr-text{font-size:0.66rem;color:rgba(255,255,255,0.4);letter-spacing:0.05em;font-family:"Geist Mono",monospace}
+@media(max-width:640px){.contact{grid-template-columns:1fr;text-align:center;padding:0 1.5rem}.contact-qr{margin:0 auto}}
 
 /* ========= FOOTER ========= */
-.footer{background:var(--ink);padding:1.5rem;text-align:center;font-size:0.78rem;color:rgba(255,255,255,0.4);border-top:1px solid rgba(255,255,255,0.08)}
+.footer{background:var(--ink);padding:1.5rem;text-align:center;font-size:0.78rem;color:rgba(255,255,255,0.4);border-top:1px solid rgba(255,255,255,0.06);font-weight:500}
 .footer a{color:rgba(255,255,255,0.5);transition:color 0.2s}
-.footer a:hover{color:var(--gold)}
+.footer a:hover{color:var(--accent)}
 
 /* ========= ANIMATIONS ========= */
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.fade-in{animation:fadeUp 0.6s ease-out both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{animation:fadeUp 0.5s ease-out both}
 .fade-in:nth-child(1){animation-delay:0s}
-.fade-in:nth-child(2){animation-delay:0.1s}
-.fade-in:nth-child(3){animation-delay:0.2s}
-.fade-in:nth-child(4){animation-delay:0.3s}
-.fade-in:nth-child(5){animation-delay:0.4s}
-.fade-in:nth-child(6){animation-delay:0.5s}
+.fade-in:nth-child(2){animation-delay:0.08s}
+.fade-in:nth-child(3){animation-delay:0.16s}
+.fade-in:nth-child(4){animation-delay:0.24s}
+.fade-in:nth-child(5){animation-delay:0.32s}
+.fade-in:nth-child(6){animation-delay:0.4s}
 </style>
 </head>
 <body>
@@ -205,11 +242,12 @@ a{color:inherit;text-decoration:none}
   <div class="nav-inner">
     <a href="#top" class="nav-logo"><span class="dot"></span>林高山</a>
     <ul class="nav-links">
-      <li><a href="#services">产品</a></li>
+      <li><a href="#services">方案</a></li>
+      <li><a href="#method">方法</a></li>
       <li><a href="#story">理念</a></li>
-      <li><a href="#tutorials">教程</a></li>
+      <li><a href="#cases">案例</a></li>
       <li><a href="#events">活动</a></li>
-      <li><a href="#moments">动态</a></li>
+      <li><a href="#feed">动态</a></li>
     </ul>
     <a href="#contact" class="nav-cta">联系</a>
   </div>
@@ -217,22 +255,40 @@ a{color:inherit;text-decoration:none}
 
 <!-- ========= HERO ========= -->
 <section class="hero" id="top">
-  <div class="hero-avatar-wrap">
-    <img src="images/photo.webp" alt="林高山" class="hero-avatar">
-  </div>
-  <div class="hero-eyebrow">AI 商业落地 · 实战笔记</div>
-  <h1>用 AI 的能力，<br>做 <em>企业的事</em>。</h1>
-  <div class="hero-sub-en">AI for Business · From Code to Classroom</div>
-  <p class="hero-lede">十年技术研发，四年 AI 商业化实战。我把 AI 翻译成企业能听懂、能落地、能变现的语言——然后在广州一间教室里，一个一个地教老板们用起来。</p>
-  <div class="hero-byline">
-    <strong>林高山</strong><span class="sep">·</span>企业 AI 落地讲师<span class="sep">·</span>广州 OPC 夜校发起人<span class="sep">·</span>国家认证 AI 训练师（高级）
-  </div>
-  <div class="hero-tags">
-    <span class="hero-tag">⚡ Agent 智能体</span>
-    <span class="hero-tag">🏢 企业 AI+</span>
-    <span class="hero-tag">🚀 OPC 一人公司</span>
-    <span class="hero-tag">🌐 AI 工具出海</span>
-    <span class="hero-tag">🏫 广州 OPC 夜校</span>
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-avatar-wrap">
+        <img src="images/photo.webp" alt="林高山" class="hero-avatar">
+      </div>
+      <div class="hero-name">林高山</div>
+      <div class="hero-title">企业 AI 落地讲师<span class="sep">·</span>广州 OPC 夜校发起人</div>
+      <div class="hero-cert">国家认证 AI 训练师（高级）</div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-eyebrow">AI 商业落地 · 实战笔记</div>
+      <h1>用 AI 的能力，<br>做 <em>企业的事</em>。</h1>
+      <div class="hero-sub-en">AI for Business · From Code to Classroom</div>
+      <p class="hero-lede">十年技术研发，四年 AI 商业化实战。我把 AI 翻译成企业能听懂、能落地、能变现的语言——然后在广州一间教室里，一个一个地教老板们用起来。</p>
+      <div class="hero-tags">
+        <span class="hero-tag">Agent 智能体</span>
+        <span class="hero-tag">企业 AI+</span>
+        <span class="hero-tag">OPC 一人公司</span>
+      </div>
+      <div class="hero-proofs">
+        <div class="hero-proof">
+          <h4>业务翻译</h4>
+          <p>把 AI 翻译成老板听得懂、能落地、能变现的语言</p>
+        </div>
+        <div class="hero-proof">
+          <h4>流程重构</h4>
+          <p>70% 时间理工作流，30% 做技术--落地不靠堆工具</p>
+        </div>
+        <div class="hero-proof">
+          <h4>实战交付</h4>
+          <p>从战略到执行，AI 军团 7×24h 可运行可验证</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -242,299 +298,347 @@ a{color:inherit;text-decoration:none}
     <div class="stat-col"><div class="v">10+</div><div class="l">年技术</div><div class="l-en">Years</div></div>
     <div class="stat-col"><div class="v">5.7万</div><div class="l">社群成员</div><div class="l-en">Community</div></div>
     <div class="stat-col"><div class="v">200+</div><div class="l">学员老板</div><div class="l-en">Students</div></div>
-    <div class="stat-col"><div class="v">6位数</div><div class="l">项目变现</div><div class="l-en">Revenue</div></div>
+    <div class="stat-col"><div class="v">百万级</div><div class="l">项目变现</div><div class="l-en">Revenue</div></div>
   </div>
 </div>
 
-<!-- ========= STORY (brand manual style) ========= -->
-<section class="story-section" id="story">
-  <div class="story-inner">
-    <div class="section-head">
-      <div class="section-num">01 / STORY</div>
-      <div class="section-title-row">
-        <h2 class="section-title">我的故事</h2>
-        <span class="section-title-en">Brand Story</span>
+<!-- ========= SERVICES ========= -->
+<section class="section" id="services">
+  <div class="section-num">01 / 06 - SOLUTIONS</div>
+  <h2 class="section-title">方案</h2>
+  <div class="section-title-en">Services & Products</div>
+  <p class="section-sub">从入门到深度合作——选一个适合你的方式，把 AI 变成你的竞争力。</p>
+  <div class="services-grid">
+    <div class="svc-card fade-in">
+      <div class="svc-icon">⚡</div>
+      <h3>成事夜校</h3>
+      <div class="h3-en">Night School</div>
+      <p class="desc">线下为主、线上为辅。每周一节线下课（2 小时），手把手带老板们把 AI 用起来。</p>
+      <div class="svc-price">
+        <span class="amount">¥1,980</span><span class="unit">/ 年</span>
+        <span class="tag">周更</span>
       </div>
-      <p class="section-sub">从程序员到 AI 翻译者——三段经历，一条主线</p>
-      <div class="section-divider"></div>
+      <ul class="svc-features">
+        <li><strong>每周</strong> 线下课 2 小时实操</li>
+        <li>线上回放随时复习</li>
+        <li>AI 工具包 & 模板持续更新</li>
+        <li>夜校学员社群答疑</li>
+      </ul>
+      <a href="#contact" class="svc-cta">报名入学 →</a>
     </div>
+    <div class="svc-card featured fade-in">
+      <span class="svc-badge">推荐</span>
+      <div class="svc-icon">🏛</div>
+      <h3>成事者联盟</h3>
+      <div class="h3-en">Chengshi Alliance</div>
+      <p class="desc">年度联盟，100 位老板共建 AI 商业实战圈。每月闭门分享 + 资源对接 + 项目孵化。</p>
+      <div class="svc-price">
+        <span class="amount">¥9,800<span style="font-size:0.5em;font-weight:400;opacity:0.7">起</span></span><span class="unit">/ 年</span>
+        <span class="tag">早鸟 · 限 100 席</span>
+      </div>
+      <ul class="svc-features">
+        <li><strong>每月</strong> 闭门实战分享会</li>
+        <li>成员间资源对接 & 项目合作</li>
+        <li>全年教程 & 工具包免费使用</li>
+        <li>OPC 一人公司方法论体系</li>
+        <li>优先参与线下大会 & 游学</li>
+      </ul>
+      <a href="#contact" class="svc-cta">申请加入 →</a>
+    </div>
+    <div class="svc-card fade-in">
+      <span class="svc-badge flag">仅 5 席</span>
+      <div class="svc-icon">🎓</div>
+      <h3>成事私塾 1v1</h3>
+      <div class="h3-en">Private Mentorship</div>
+      <p class="desc">全年一对一陪跑，从 AI 战略到落地执行，林高山亲自带。适合想拿到结果的老板。</p>
+      <div class="svc-price">
+        <span class="amount">¥39,800</span><span class="unit">/ 年</span>
+        <span class="tag">含联盟</span>
+      </div>
+      <ul class="svc-features">
+        <li><strong>1v1</strong> 月度战略辅导</li>
+        <li>定制 AI 落地方案 & 工作流</li>
+        <li>7×24h 微信即时答疑</li>
+        <li>含成事社联盟全部权益</li>
+        <li>季度复盘 & 数据诊断</li>
+      </ul>
+      <a href="#contact" class="svc-cta">预约咨询 →</a>
+    </div>
+  </div>
+  <div class="svc-product-teaser">
+    <div class="teaser-label">Coming Soon</div>
+    <div class="teaser-text">更多 AI 工具产品即将上线，敬请期待</div>
+  </div>
+  <p class="svc-note">企业内训 / 项目咨询 / 课程合作请单独沟通 · 所有方案均含成事社社群接入</p>
+</section>
+
+<!-- ========= METHOD ========= -->
+<div class="section-alt">
+  <div class="section-inner" id="method">
+    <div class="section-num">02 / 06 - METHOD</div>
+    <h2 class="section-title">成事方法论</h2>
+    <div class="section-title-en">How I Deliver</div>
+    <p class="section-sub">AI 不是噱头，是把判断更快变成可验证结果的杠杆。六步走，从问题到落地。</p>
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-step">STEP 01</div>
+        <h3>问题诊断</h3>
+        <p>走进业务现场，从一线动作、管理目标和数据反馈中，判断真正值得解决的问题。</p>
+        <div class="method-outputs">
+          <span class="method-output">问题定义</span>
+          <span class="method-output">目标结果</span>
+        </div>
+      </div>
+      <div class="method-card">
+        <div class="method-step">STEP 02</div>
+        <h3>流程拆解</h3>
+        <p>梳理当前工作流、痛点、约束和关键操作，找到 AI 能介入的环节和断点。</p>
+        <div class="method-outputs">
+          <span class="method-output">流程图</span>
+          <span class="method-output">痛点清单</span>
+        </div>
+      </div>
+      <div class="method-card">
+        <div class="method-step">STEP 03</div>
+        <h3>方案设计</h3>
+        <p>把模糊诉求翻译成可执行方案：功能边界、优先级、验收标准和预期 ROI。</p>
+        <div class="method-outputs">
+          <span class="method-output">方案文档</span>
+          <span class="method-output">验收标准</span>
+        </div>
+      </div>
+      <div class="method-card">
+        <div class="method-step">STEP 04</div>
+        <h3>AI 落地</h3>
+        <p>用 Agent 智能体、自动化工作流、AI Coding 把方案快速压缩成可运行结果。</p>
+        <div class="method-outputs">
+          <span class="method-output">Agent 设计</span>
+          <span class="method-output">可运行版本</span>
+        </div>
+      </div>
+      <div class="method-card">
+        <div class="method-step">STEP 05</div>
+        <h3>验收迭代</h3>
+        <p>真实用户试用，人工验收保证可信。根据反馈调整流程、文案和功能。</p>
+        <div class="method-outputs">
+          <span class="method-output">验收报告</span>
+          <span class="method-output">迭代版本</span>
+        </div>
+      </div>
+      <div class="method-card">
+        <div class="method-step">STEP 06</div>
+        <h3>沉淀复用</h3>
+        <p>把验证过的流程、工具和 SOP 沉淀为可复用资产，让下次落地更快、成本更低。</p>
+        <div class="method-outputs">
+          <span class="method-output">SOP 文档</span>
+          <span class="method-output">工具包</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========= STORY ========= -->
+<div class="">
+  <div class="section-inner" id="story">
+    <div class="section-num">03 / 06 - STORY</div>
+    <h2 class="section-title">我的故事</h2>
+    <div class="section-title-en">Brand Story</div>
+    <p class="section-sub">从程序员到 AI 翻译者——三段经历，一条主线。</p>
     <div class="story-grid">
-      <div class="story-card fade-in">
-        <div class="num"><span>01</span></div>
+      <div class="story-card">
+        <div class="num">01</div>
         <h3>起源 / 技术底座</h3>
         <div class="h3-en">Origin</div>
         <p>十年技术研发，从后端工程师到架构师。写过支付系统，搭过数据管道，带过团队。技术的本质是解决问题——这个认知后来成了我做 AI 落地的底层操作系统。</p>
       </div>
-      <div class="story-card fade-in">
-        <div class="num"><span>02</span></div>
+      <div class="story-card">
+        <div class="num">02</div>
         <h3>创造 / AI 商业化</h3>
         <div class="h3-en">Creation</div>
         <p>四年 AI 商业化实战，把大模型、Agent、自动化工作流翻译成老板听得懂的语言。发现最大痛点不是技术选型，是流程重构——70% 时间在帮企业理清工作流，技术只占 30%。</p>
       </div>
-      <div class="story-card fade-in">
-        <div class="num"><span>03</span></div>
+      <div class="story-card">
+        <div class="num">03</div>
         <h3>未来 / 成事社</h3>
         <div class="h3-en">Future</div>
         <p>发起广州 OPC 夜校，孵化「成事社」社群。目标：用 AI 把事做成，把人连上。让每个老板都拥有自己的 AI 军团，1 人 + AI = 1 家公司。年创收百万级，不是口号，是路线图。</p>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- ========= SERVICES (pricing cards) ========= -->
-<section class="services-section" id="services">
-  <div class="services-inner">
-    <div class="section-head">
-      <div class="section-num">02 / SERVICES</div>
-      <div class="section-title-row">
-        <h2 class="section-title">产品服务</h2>
-        <span class="section-title-en">Products &amp; Pricing</span>
+<!-- ========= CASES ========= -->
+<section class="section" id="cases">
+  <div class="section-num">04 / 06 - CASES</div>
+  <h2 class="section-title">客户案例</h2>
+  <div class="section-title-en">Client Results</div>
+  <p class="section-sub">真实场景，真实数据——AI 落地的结果说话。</p>
+  <div class="cases-grid">
+    <div class="case-card fade-in">
+      <span class="case-industry">制造业</span>
+      <h3>传统工厂 AI + 流程重构</h3>
+      <div class="case-pain">订单处理全靠人工，3 人跟单团队每天加班，错误率 15%。</div>
+      <div class="case-solution">部署 AI 自动化订单处理 + Agent 智能客服，重构跟单工作流，人工只处理异常。</div>
+      <div class="case-role">从流程诊断到方案落地全链路负责，含 Agent 设计与团队培训</div>
+      <div class="case-tags">
+        <span class="case-tag">Agent</span>
+        <span class="case-tag">流程重构</span>
+        <span class="case-tag">自动化</span>
       </div>
-      <p class="section-sub">从入门到深度合作--选一个适合你的方式，把 AI 变成你的竞争力</p>
-      <div class="section-divider"></div>
+      <div class="case-result">
+        <div class="case-metric"><div class="mv">3×</div><div class="ml">效率提升</div></div>
+        <div class="case-metric"><div class="mv">85%</div><div class="ml">错误率降</div></div>
+      </div>
     </div>
-    <div class="services-grid">
-
-      <!-- Card 1: 成事夜校 -->
-      <div class="svc-card fade-in">
-        <div class="svc-icon">⚡</div>
-        <h3>成事夜校</h3>
-        <div class="h3-en">Night School</div>
-        <p class="desc">线下为主、线上为辅。每周一节线下课（2 小时），手把手带老板们把 AI 用起来。</p>
-        <div class="svc-price">
-          <span class="amount">¥1,980</span><span class="unit">/ 年</span>
-          <span class="tag">周更</span>
-        </div>
-        <ul class="svc-features">
-          <li><strong>每周</strong> 线下课 2 小时实操</li>
-          <li>线上回放随时复习</li>
-          <li>AI 工具包 &amp; 模板持续更新</li>
-          <li>夜校学员社群答疑</li>
-        </ul>
-        <a href="#contact" class="svc-cta">报名入学 →</a>
+    <div class="case-card fade-in">
+      <span class="case-industry">教育培训</span>
+      <h3>培训机构 AI 内容获客</h3>
+      <div class="case-pain">传统发传单获客成本 200+ 元/人，转化率不到 1%。</div>
+      <div class="case-solution">搭建 AI 内容生产流水线，公众号 + 小绿书矩阵批量产出，私域自动转化。</div>
+      <div class="case-role">内容策略设计 + AI 工作流搭建 + 私域转化 SOP</div>
+      <div class="case-tags">
+        <span class="case-tag">内容获客</span>
+        <span class="case-tag">AI 工作流</span>
+        <span class="case-tag">私域转化</span>
       </div>
-
-      <!-- Card 2: 成事者联盟 (featured) -->
-      <div class="svc-card featured fade-in">
-        <span class="svc-badge svc-badge-best">推荐</span>
-        <div class="svc-icon">🏛</div>
-        <h3>成事者联盟</h3>
-        <div class="h3-en">Chengshi Alliance</div>
-        <p class="desc">年度联盟，100 位老板共建 AI 商业实战圈。每月闭门分享 + 资源对接 + 项目孵化。</p>
-        <div class="svc-price">
-          <span class="amount">¥9,800<span style="font-size:0.5em;font-weight:400;opacity:0.7">起</span></span><span class="unit">/ 年</span>
-          <span class="tag">早鸟价 · 限 100 席</span>
-        </div>
-        <ul class="svc-features">
-          <li><strong>每月</strong> 闭门实战分享会</li>
-          <li>成员间资源对接 &amp; 项目合作</li>
-          <li>全年教程 &amp; 工具包免费使用</li>
-          <li>OPC 一人公司方法论体系</li>
-          <li>优先参与线下大会 &amp; 游学</li>
-        </ul>
-        <a href="#contact" class="svc-cta">申请加入 →</a>
+      <div class="case-result">
+        <div class="case-metric"><div class="mv">5×</div><div class="ml">获客效率</div></div>
+        <div class="case-metric"><div class="mv">¥35</div><div class="ml">单客成本</div></div>
       </div>
-
-      <!-- Card 3: 成事私塾 -->
-      <div class="svc-card fade-in">
-        <span class="svc-badge svc-badge-flag">仅 5 席</span>
-        <div class="svc-icon">🎓</div>
-        <h3>成事私塾 1v1</h3>
-        <div class="h3-en">Private Mentorship</div>
-        <p class="desc">全年一对一陪跑，从 AI 战略到落地执行，林高山亲自带。适合想拿到结果的老板。</p>
-        <div class="svc-price">
-          <span class="amount">¥39,800</span><span class="unit">/ 年</span>
-          <span class="tag">含联盟</span>
-        </div>
-        <ul class="svc-features">
-          <li><strong>1v1</strong> 月度战略辅导</li>
-          <li>定制 AI 落地方案 &amp; 工作流</li>
-          <li>7×24h 微信即时答疑</li>
-          <li>含成事社联盟全部权益</li>
-          <li>季度复盘 &amp; 数据诊断</li>
-        </ul>
-        <a href="#contact" class="svc-cta">预约咨询 →</a>
-      </div>
-
     </div>
-    <p class="svc-note">企业内训 / 项目咨询 / 课程合作请单独沟通 · 所有产品均含成事社社群接入</p>
+    <div class="case-card fade-in">
+      <span class="case-industry">电商零售</span>
+      <h3>电商团队 AI 客服 + 数据分析</h3>
+      <div class="case-pain">大促期间客服响应慢，差评率高，复购数据靠经验拍脑袋。</div>
+      <div class="case-solution">AI 客服 7×24h 覆盖常见问题 + Agent 自动分析评价数据生成改进报告，周度迭代。</div>
+      <div class="case-role">客服 Agent 设计 + 数据分析看板搭建 + 迭代机制落地</div>
+      <div class="case-tags">
+        <span class="case-tag">AI 客服</span>
+        <span class="case-tag">数据分析</span>
+        <span class="case-tag">周度迭代</span>
+      </div>
+      <div class="case-result">
+        <div class="case-metric"><div class="mv">40%</div><div class="ml">差评率降</div></div>
+        <div class="case-metric"><div class="mv">2.3×</div><div class="ml">复购提升</div></div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ========= TUTORIALS (card grid) ========= -->
-<section class="section" id="tutorials">
-  <div class="section-head">
-    <div class="section-num">03 / TUTORIALS</div>
-    <div class="section-title-row">
-      <h2 class="section-title">最新教程</h2>
-      <span class="section-title-en">Latest Guides</span>
-    </div>
-    <p class="section-sub">AI 工具落地指南，持续更新中</p>
-    <div class="section-divider"></div>
-  </div>
-  <div class="tut-grid">
-    <div class="tut-card fade-in">
-      <div class="tut-card-top">
-        <div class="tut-num">01</div>
-        <span class="tut-badge tut-badge-new">NEW</span>
+<!-- ========= EVENTS ========= -->
+<div class="section-alt">
+  <div class="section-inner" id="events">
+    <div class="section-num">05 / 06 - EVENTS</div>
+    <h2 class="section-title">线下活动</h2>
+    <div class="section-title-en">Offline Events</div>
+    <p class="section-sub">组局、培训、大会——把方法论带到真实场景。</p>
+    <div class="event-wall">
+      <div class="event-card fade-in">
+        <img src="images/scene1.webp" alt="广州OPC夜校">
+        <div class="event-overlay">
+          <div class="event-type">线下组局</div>
+          <h3>广州 OPC 夜校</h3>
+          <div class="event-date">2026.07 · 30+ 老板参与</div>
+        </div>
       </div>
-      <div class="cat">AI 办公助手</div>
+      <div class="event-card fade-in">
+        <img src="images/scene2.webp" alt="AI智创汇沙龙">
+        <div class="event-overlay">
+          <div class="event-type">线下分享</div>
+          <h3>AI 智创汇沙龙</h3>
+          <div class="event-date">2026.06</div>
+        </div>
+      </div>
+      <div class="event-card fade-in">
+        <img src="images/scene3.webp" alt="企业AI内训">
+        <div class="event-overlay">
+          <div class="event-type">企业培训</div>
+          <h3>企业 AI+ 内训</h3>
+          <div class="event-date">2026.05</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========= FEED ========= -->
+<section class="section" id="feed">
+  <div class="section-num">06 / 06 - FEED</div>
+  <h2 class="section-title">动态</h2>
+  <div class="section-title-en">Content Hub</div>
+  <p class="section-sub">图文、视频、教程——持续输出 AI 实战内容。</p>
+  <div class="feed-grid">
+    <div class="feed-card fade-in">
+      <div class="feed-card-top">
+        <span class="feed-type feed-type-article">图文</span>
+        <div class="feed-num">01</div>
+      </div>
+      <h3>AI 落地的本质是流程重构，不是工具堆叠</h3>
+      <p>拆了 3 个企业 AI 办公场景，发现最大坑不是技术而是流程。技术选型只占 30%，70% 时间在理清工作流。</p>
+      <div class="feed-meta">
+        <span>2026.07.19</span>
+        <span class="feed-arrow">阅读全文 →</span>
+      </div>
+    </div>
+    <div class="feed-card fade-in">
+      <div class="feed-card-top">
+        <span class="feed-type feed-type-article">图文</span>
+        <div class="feed-num">02</div>
+      </div>
+      <h3>广州 OPC 夜校第 8 期复盘</h3>
+      <p>30+ 老板参与，最大的感受：老板们不是不想用 AI，是没人帮他们翻译成业务语言。</p>
+      <div class="feed-meta">
+        <span>2026.07.15</span>
+        <span class="feed-arrow">阅读全文 →</span>
+      </div>
+    </div>
+    <div class="feed-card fade-in">
+      <div class="feed-card-top">
+        <span class="feed-type feed-type-guide">教程</span>
+        <div class="feed-num">03</div>
+      </div>
       <h3>WorkBuddy 101：从 0 到 1 搭建企业 AI 办公助手</h3>
       <p>覆盖邮件、日程、文档、会议全场景，让每个员工拥有一个 AI 助手。</p>
-      <div class="arrow">查看详情 →</div>
-    </div>
-    <div class="tut-card fade-in">
-      <div class="tut-card-top">
-        <div class="tut-num">02</div>
-        <span class="tut-badge tut-badge-new">NEW</span>
+      <div class="feed-meta">
+        <span>2026.07.12</span>
+        <span class="feed-arrow">查看教程 →</span>
       </div>
-      <div class="cat">AI 编程</div>
-      <h3>Codex 实战指南：从需求到代码 15 分钟</h3>
-      <p>用 Codex 实现自动化编程，程序员效率提升 10 倍的完整路线图。</p>
-      <div class="arrow">查看详情 →</div>
     </div>
-    <div class="tut-card fade-in">
-      <div class="tut-card-top">
-        <div class="tut-num">03</div>
+    <div class="feed-card fade-in">
+      <div class="feed-card-top">
+        <span class="feed-type feed-type-video">视频</span>
+        <div class="feed-num">04</div>
       </div>
-      <div class="cat">AI 原生团队</div>
+      <h3>Codex 实战：从需求到代码 15 分钟</h3>
+      <p>用 Codex 实现自动化编程，程序员效率提升 10 倍的完整路线图。现场演示。</p>
+      <div class="feed-meta">
+        <span>2026.07.10</span>
+        <span class="feed-arrow">观看视频 →</span>
+      </div>
+    </div>
+    <div class="feed-card fade-in">
+      <div class="feed-card-top">
+        <span class="feed-type feed-type-guide">教程</span>
+        <div class="feed-num">05</div>
+      </div>
       <h3>Hermes Agent：搭建 7×24h AI 作战团队</h3>
       <p>1 人 + AI 军团 = 1 个工作室，从搭建到部署的完整方案。</p>
-      <div class="arrow">查看详情 →</div>
-    </div>
-    <div class="tut-card fade-in">
-      <div class="tut-card-top">
-        <div class="tut-num">04</div>
-      </div>
-      <div class="cat">工具集成</div>
-      <h3>MCP 协议实战：让 AI 调用任何工具</h3>
-      <p>Model Context Protocol 从原理到落地的完整指南。</p>
-      <div class="arrow">查看详情 →</div>
-    </div>
-    <div class="tut-card fade-in">
-      <div class="tut-card-top">
-        <div class="tut-num">05</div>
-      </div>
-      <div class="cat">自动化</div>
-      <h3>Agent 工作流设计模式</h3>
-      <p>多 Agent 协作从单点到全自动的设计方法论。</p>
-      <div class="arrow">查看详情 →</div>
-    </div>
-    <div class="tut-card fade-in">
-      <div class="tut-card-top">
-        <div class="tut-num">06</div>
-        <span class="tut-badge tut-badge-hot">HOT</span>
-      </div>
-      <div class="cat">创业实战</div>
-      <h3>OPC 一人公司方法论</h3>
-      <p>1 人 + AI 军团 = 1 家公司，内容获客到变现全链路。</p>
-      <div class="arrow">查看详情 →</div>
-    </div>
-  </div>
-</section>
-
-<!-- ========= EVENTS (card wall) ========= -->
-<section class="section" id="events">
-  <div class="section-head">
-    <div class="section-num">04 / EVENTS</div>
-    <div class="section-title-row">
-      <h2 class="section-title">线下活动</h2>
-      <span class="section-title-en">Offline Events</span>
-    </div>
-    <p class="section-sub">组局、培训、大会——把方法论带到真实场景</p>
-    <div class="section-divider"></div>
-  </div>
-  <div class="event-wall">
-    <div class="event-card fade-in">
-      <img src="images/scene1.webp" alt="广州OPC夜校">
-      <div class="event-overlay">
-        <div class="event-type">线下组局</div>
-        <h3>广州 OPC 夜校</h3>
-        <div class="event-date">2026.07 · 30+ 老板参与</div>
+      <div class="feed-meta">
+        <span>2026.07.05</span>
+        <span class="feed-arrow">查看教程 →</span>
       </div>
     </div>
-    <div class="event-card fade-in">
-      <img src="images/scene2.webp" alt="AI智创汇沙龙">
-      <div class="event-overlay">
-        <div class="event-type">线下分享</div>
-        <h3>AI 智创汇沙龙</h3>
-        <div class="event-date">2026.06</div>
+    <div class="feed-card fade-in">
+      <div class="feed-card-top">
+        <span class="feed-type feed-type-article">图文</span>
+        <div class="feed-num">06</div>
       </div>
-    </div>
-    <div class="event-card fade-in">
-      <img src="images/scene3.webp" alt="企业AI内训">
-      <div class="event-overlay">
-        <div class="event-type">企业培训</div>
-        <h3>企业 AI+ 内训</h3>
-        <div class="event-date">2026.05</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========= MOMENTS ========= -->
-<section class="section" id="moments">
-  <div class="section-head">
-    <div class="section-num">05 / MOMENTS</div>
-    <div class="section-title-row">
-      <h2 class="section-title">票圈动态</h2>
-      <span class="section-title-en">Recent Updates</span>
-    </div>
-    <p class="section-sub">最近在折腾什么——同步朋友圈</p>
-    <div class="section-divider"></div>
-  </div>
-  <div class="moment-feed">
-    <div class="moment-card fade-in">
-      <div class="moment-head">
-        <div class="moment-av">林</div>
-        <div class="moment-info">
-          <div class="moment-name">林高山</div>
-          <div class="moment-date">7月19日</div>
-        </div>
-      </div>
-      <p class="moment-text">WorkBuddy 教程上线了。这周拆了 3 个企业 AI 办公场景，发现最大的坑不是技术而是流程。技术选型只占 30%，70% 时间在帮客户理清工作流。AI 落地的本质是流程重构，不是工具堆叠。</p>
-      <div class="moment-tags">
-        <span class="moment-tag">#WorkBuddy</span>
-        <span class="moment-tag">#AI落地</span>
-      </div>
-      <div class="moment-actions">
-        <span>👍 32</span>
-        <span>💬 8</span>
-      </div>
-    </div>
-    <div class="moment-card fade-in">
-      <div class="moment-head">
-        <div class="moment-av">林</div>
-        <div class="moment-info">
-          <div class="moment-name">林高山</div>
-          <div class="moment-date">7月15日</div>
-        </div>
-      </div>
-      <p class="moment-text">广州 OPC 夜校第 8 期结束，来了 30+ 老板。最大的感受：老板们不是不想用 AI，是没人帮他们把 AI 翻译成业务语言。这就是我的价值——做一个翻译者，而不是推销员。</p>
-      <div class="moment-tags">
-        <span class="moment-tag">#OPC夜校</span>
-      </div>
-      <div class="moment-actions">
-        <span class="moment-like">❤️ 45</span>
-        <span>💬 12</span>
-      </div>
-    </div>
-    <div class="moment-card fade-in">
-      <div class="moment-head">
-        <div class="moment-av">林</div>
-        <div class="moment-info">
-          <div class="moment-name">林高山</div>
-          <div class="moment-date">7月10日</div>
-        </div>
-      </div>
-      <p class="moment-text">用 Codex 写了一整天代码。体验：从需求到可运行代码只要 15 分钟。程序员不会失业，但不会用 AI 的程序员会。这周五的夜校我会手把手教大家怎么用，名额还剩 8 个。</p>
-      <div class="moment-tags">
-        <span class="moment-tag">#Codex</span>
-        <span class="moment-tag">#AI编程</span>
-      </div>
-      <div class="moment-actions">
-        <span class="moment-like">❤️ 67</span>
-        <span>💬 23</span>
+      <h3>OPC 一人公司方法论：从内容到变现</h3>
+      <p>1 人 + AI 军团 = 1 家公司，内容获客到变现全链路实战拆解。</p>
+      <div class="feed-meta">
+        <span>2026.06.28</span>
+        <span class="feed-arrow">阅读全文 →</span>
       </div>
     </div>
   </div>
@@ -543,16 +647,21 @@ a{color:inherit;text-decoration:none}
 <!-- ========= CONTACT ========= -->
 <section class="contact-section" id="contact">
   <div class="contact">
-    <div class="eyebrow">Let's Talk</div>
-    <h2>聊聊合作？</h2>
-    <p>企业内训 · 课程合作 · 项目咨询</p>
-    <a href="#contact" class="contact-cta">💬 加微信聊聊</a>
+    <div class="contact-text">
+      <div class="eyebrow">Let's Talk</div>
+      <h2>聊聊合作？</h2>
+      <p>企业内训 · 课程合作 · 项目咨询</p>
+      <a href="#" class="contact-cta">加微信聊聊 →</a>
+    </div>
+    <div class="contact-qr">
+      <div class="contact-qr-icon">📱</div>
+      <div class="contact-qr-text">扫码加微信</div>
+    </div>
   </div>
 </section>
 
 <footer class="footer">
-  © 2026 林高山 · 广州 · AI 落地实战<br>
-  <a href="#top">回到顶部</a>
+  © 2026 林高山 · 广州 · AI 落地实战 · <a href="#top">回到顶部</a>
 </footer>
 
 </body>
