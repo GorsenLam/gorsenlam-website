@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="林高山｜用 AI 的能力，做企业的事。10年技术研发 × 4年AI商业化实战。">
-<meta property="og:title" content="林高山 | AI 落地实战">
-<meta property="og:description" content="用 AI 的能力，做企业的事。10年技术研发 × 4年AI商业化实战。">
+<meta name="description" content="林高山｜AI FDE 生态架构师 · OPC 一人公司创业者。10年技术研发 × 4年AI商业化实战。国家认证AI训练师（高级）· 腾讯云认证WorkBuddy OPC从业者。">
+<meta property="og:title" content="林高山 | AI FDE 生态架构师">
+<meta property="og:description" content="AI FDE 生态架构师 · OPC 一人公司创业者。10年技术研发 × 4年AI商业化实战。">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="zh_CN">
-<title>林高山 | AI 落地实战</title>
+<title>林高山 | AI FDE 生态架构师</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -142,6 +142,27 @@ a{color:inherit;text-decoration:none}
 @media(max-width:768px){.services-grid{grid-template-columns:1fr;gap:1rem}.svc-card.featured{order:-1}}
 @media(min-width:769px) and (max-width:920px){.services-grid{grid-template-columns:1fr 1fr}.svc-card:nth-child(3){grid-column:span 2;max-width:50%;margin:0 auto}}
 
+/* ========= MILESTONES ========= */
+.milestone-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.milestone-card{background:var(--card);border:1px solid var(--ink-06);border-radius:var(--radius);padding:2rem 1.8rem;transition:all 0.3s}
+.milestone-card:hover{border-color:var(--ink);transform:translateY(-2px)}
+.milestone-card .ms-org{font-size:0.66rem;font-weight:600;color:var(--accent-deep);background:var(--accent-soft);padding:0.2rem 0.7rem;border-radius:200px;letter-spacing:0.05em;margin-bottom:1rem;font-family:"Geist Mono",monospace;display:inline-block}
+.milestone-card h3{font-family:"Bricolage Grotesque",sans-serif;font-size:1.15rem;font-weight:600;color:var(--ink);margin-bottom:1rem;letter-spacing:-0.01em}
+.milestone-card .ms-item{font-size:0.86rem;color:var(--ink-56);line-height:1.65;font-weight:500;margin-bottom:0.8rem;padding-left:1rem;position:relative}
+.milestone-card .ms-item::before{content:'▶';position:absolute;left:0;top:0;font-size:0.6rem;color:var(--accent);font-weight:600}
+.milestone-card .ms-item strong{color:var(--ink);font-weight:600}
+@media(max-width:768px){.milestone-grid{grid-template-columns:1fr;gap:1rem}}
+
+/* ========= COURSES ========= */
+.course-list{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.course-group{padding:0}
+.course-group-title{font-family:"Bricolage Grotesque",sans-serif;font-size:1.1rem;font-weight:600;color:var(--ink);margin-bottom:1.2rem;padding-bottom:0.6rem;border-bottom:2px solid var(--accent);letter-spacing:-0.01em}
+.course-item{font-size:0.86rem;color:var(--ink-56);line-height:1.5;padding:0.6rem 0;border-bottom:1px solid var(--ink-06);font-weight:500;display:flex;align-items:baseline;gap:0.5rem}
+.course-item:last-child{border-bottom:none}
+.course-item::before{content:'◂';color:var(--accent);font-size:0.7rem;flex-shrink:0}
+.course-item strong{color:var(--ink);font-weight:600}
+@media(max-width:768px){.course-list{grid-template-columns:1fr;gap:2rem}}
+
 /* ========= CASES ========= */
 .cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 
@@ -245,6 +266,8 @@ a{color:inherit;text-decoration:none}
       <li><a href="#services">方案</a></li>
       <li><a href="#method">方法</a></li>
       <li><a href="#story">理念</a></li>
+      <li><a href="#milestones">履历</a></li>
+      <li><a href="#courses">课程</a></li>
       <li><a href="#cases">案例</a></li>
       <li><a href="#events">活动</a></li>
       <li><a href="#feed">动态</a></li>
@@ -261,16 +284,16 @@ a{color:inherit;text-decoration:none}
         <img src="images/photo.webp" alt="林高山" class="hero-avatar">
       </div>
       <div class="hero-name">林高山</div>
-      <div class="hero-title">企业 AI 落地讲师<span class="sep">·</span>广州 OPC 夜校发起人</div>
-      <div class="hero-cert">国家认证 AI 训练师（高级）</div>
+      <div class="hero-title">AI FDE 生态架构师<span class="sep">·</span>OPC 一人公司创业者</div>
+      <div class="hero-cert">国家认证 AI 训练师（高级）<br>腾讯云认证 WorkBuddy OPC 从业者</div>
     </div>
     <div class="hero-right">
       <div class="hero-eyebrow">AI 商业落地 · 实战笔记</div>
       <h1>用 AI 的能力，<br>做 <em>企业的事</em>。</h1>
-      <div class="hero-sub-en">AI for Business · From Code to Classroom</div>
-      <p class="hero-lede">十年技术研发，四年 AI 商业化实战。我把 AI 翻译成企业能听懂、能落地、能变现的语言——然后在广州一间教室里，一个一个地教老板们用起来。</p>
+      <div class="hero-sub-en">AI FDE · From Code to Classroom</div>
+      <p class="hero-lede">十年技术研发，四年 AI 商业化实战。国内 AI 头部社群（近 6 万圈友）组局官、星火师，大湾区 AI 智创汇联合主理人，广州 OPC 夜校发起人。把 AI 翻译成企业能听懂、能落地、能变现的语言。</p>
       <div class="hero-tags">
-        <span class="hero-tag">Agent 智能体</span>
+        <span class="hero-tag">AI FDE 生态</span>
         <span class="hero-tag">企业 AI+</span>
         <span class="hero-tag">OPC 一人公司</span>
       </div>
@@ -296,15 +319,16 @@ a{color:inherit;text-decoration:none}
 <div class="stats-wrap">
   <div class="stats">
     <div class="stat-col"><div class="v">10+</div><div class="l">年技术</div><div class="l-en">Years</div></div>
-    <div class="stat-col"><div class="v">5.7万</div><div class="l">社群成员</div><div class="l-en">Community</div></div>
-    <div class="stat-col"><div class="v">200+</div><div class="l">学员老板</div><div class="l-en">Students</div></div>
-    <div class="stat-col"><div class="v">百万级</div><div class="l">项目变现</div><div class="l-en">Revenue</div></div>
+    <div class="stat-col"><div class="v">6万</div><div class="l">社群圈友</div><div class="l-en">Community</div></div>
+    <div class="stat-col"><div class="v">50+</div><div class="l">线下活动</div><div class="l-en">Events</div></div>
+    <div class="stat-col"><div class="v">3000+</div><div class="l">精准私域</div><div class="l-en">Followers</div></div>
+    <div class="stat-col"><div class="v">近7位数</div><div class="l">AI 变现</div><div class="l-en">Revenue</div></div>
   </div>
 </div>
 
 <!-- ========= SERVICES ========= -->
 <section class="section" id="services">
-  <div class="section-num">01 / 06 - SOLUTIONS</div>
+  <div class="section-num">01 / 08 - SOLUTIONS</div>
   <h2 class="section-title">方案</h2>
   <div class="section-title-en">Services & Products</div>
   <p class="section-sub">从入门到深度合作——选一个适合你的方式，把 AI 变成你的竞争力。</p>
@@ -375,7 +399,7 @@ a{color:inherit;text-decoration:none}
 <!-- ========= METHOD ========= -->
 <div class="section-alt">
   <div class="section-inner" id="method">
-    <div class="section-num">02 / 06 - METHOD</div>
+    <div class="section-num">02 / 08 - METHOD</div>
     <h2 class="section-title">成事方法论</h2>
     <div class="section-title-en">How I Deliver</div>
     <p class="section-sub">AI 不是噱头，是把判断更快变成可验证结果的杠杆。六步走，从问题到落地。</p>
@@ -441,7 +465,7 @@ a{color:inherit;text-decoration:none}
 <!-- ========= STORY ========= -->
 <div class="">
   <div class="section-inner" id="story">
-    <div class="section-num">03 / 06 - STORY</div>
+    <div class="section-num">03 / 08 - STORY</div>
     <h2 class="section-title">我的故事</h2>
     <div class="section-title-en">Brand Story</div>
     <p class="section-sub">从程序员到 AI 翻译者——三段经历，一条主线。</p>
@@ -450,13 +474,13 @@ a{color:inherit;text-decoration:none}
         <div class="num">01</div>
         <h3>起源 / 技术底座</h3>
         <div class="h3-en">Origin</div>
-        <p>十年技术研发，从后端工程师到架构师。写过支付系统，搭过数据管道，带过团队。技术的本质是解决问题——这个认知后来成了我做 AI 落地的底层操作系统。</p>
+        <p>十年技术研发，从后端工程师到架构师。在电力行业主导千万级标杆项目，在银行研发中心搭建服务 3000+ 客户经理的系统。技术的本质是解决问题——这个认知后来成了我做 AI 落地的底层操作系统。</p>
       </div>
       <div class="story-card">
         <div class="num">02</div>
         <h3>创造 / AI 商业化</h3>
         <div class="h3-en">Creation</div>
-        <p>四年 AI 商业化实战，把大模型、Agent、自动化工作流翻译成老板听得懂的语言。发现最大痛点不是技术选型，是流程重构——70% 时间在帮企业理清工作流，技术只占 30%。</p>
+        <p>四年 AI 商业化实战，把大模型、Agent、自动化工作流翻译成老板听得懂的语言。国内 AI 头部社群（近 6 万圈友）组局官、星火师，大湾区 AI 智创汇联合主理人，累计线下活动 50+ 场。发现最大痛点不是技术选型，是流程重构。</p>
       </div>
       <div class="story-card">
         <div class="num">03</div>
@@ -468,9 +492,62 @@ a{color:inherit;text-decoration:none}
   </div>
 </div>
 
+<!-- ========= MILESTONES ========= -->
+<div class="section-alt">
+  <div class="section-inner" id="milestones">
+    <div class="section-num">04 / 08 - MILESTONES</div>
+    <h2 class="section-title">职业里程碑</h2>
+    <div class="section-title-en">Career Milestones</div>
+    <p class="section-sub">从电力数字化到银行研发，从技术架构到 AI 商业化--每一步都在积累落地能力。</p>
+    <div class="milestone-grid">
+      <div class="milestone-card">
+        <span class="ms-org">国内电力行业领先数字化企业</span>
+        <h3>解决方案技术总监</h3>
+        <div class="ms-item">负责行业数字化转型整体解决方案设计，落地<strong>输变配用电</strong>业务场景的数字化智能化升级</div>
+        <div class="ms-item">深度对接企业客户核心业务痛点，定制化设计行业专属方案</div>
+        <div class="ms-item">累计主导落地<strong>千万级标杆项目 3+ 个</strong>，百万级项目 10+ 个</div>
+        <div class="ms-item">具备极强的企业级服务与全周期方案交付能力</div>
+      </div>
+      <div class="milestone-card">
+        <span class="ms-org">国内股份制银行研发中心</span>
+        <h3>技术项目经理</h3>
+        <div class="ms-item">主导搭建总行研发<strong>客户经理云店系统</strong>及配套 APP</div>
+        <div class="ms-item">服务全行<strong>3000+ 一线客户经理</strong>，实现客户线上精准触达</div>
+        <div class="ms-item">金融产品智能推荐、营销全流程数字化管理</div>
+        <div class="ms-item">零售产品<strong>转化率提升 25%</strong>，客户<strong>留存率提升 20%</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========= COURSES ========= -->
+<section class="section" id="courses">
+  <div class="section-num">05 / 08 - COURSES</div>
+  <h2 class="section-title">系列课程</h2>
+  <div class="section-title-en">Course System</div>
+  <p class="section-sub">AI 一人公司 + 企业 AI 化，两套课程体系覆盖个人创业到企业转型。</p>
+  <div class="course-list">
+    <div class="course-group">
+      <div class="course-group-title">AI 一人公司系列课程</div>
+      <div class="course-item"><strong>《AI Native 超级个体成长计划》</strong></div>
+      <div class="course-item"><strong>《OpenClaw 小龙虾：如何搭建你的专属 7×24h AI 作战团队》</strong></div>
+      <div class="course-item"><strong>《OPC 一人公司内容获客：如何用 AI 打造全链路高效获客闭环》</strong></div>
+      <div class="course-item"><strong>《AI Agent 全域内容工厂系统系列课》</strong></div>
+    </div>
+    <div class="course-group" style="padding-left:2rem">
+      <div class="course-group-title">企业 + AI 化系列课程</div>
+      <div class="course-item"><strong>《AI 智能体提升办公效率、内容生产与培训效能》</strong></div>
+      <div class="course-item"><strong>《Agent 智能体在培训、知识管理和业务流程中的应用落地》</strong></div>
+      <div class="course-item"><strong>《AI 赋能中小企业数智化转型、业务创新与应用变现》</strong></div>
+      <div class="course-item"><strong>《AI 时代 FDE 能力体系与企业 AI 项目实践》</strong></div>
+      <div class="course-item"><strong>《AI FDE 转型实战：从业务场景到智能增强工程》</strong></div>
+    </div>
+  </div>
+</section>
+
 <!-- ========= CASES ========= -->
 <section class="section" id="cases">
-  <div class="section-num">04 / 06 - CASES</div>
+  <div class="section-num">06 / 08 - CASES</div>
   <h2 class="section-title">客户案例</h2>
   <div class="section-title-en">Client Results</div>
   <p class="section-sub">真实场景，真实数据——AI 落地的结果说话。</p>
@@ -529,7 +606,7 @@ a{color:inherit;text-decoration:none}
 <!-- ========= EVENTS ========= -->
 <div class="section-alt">
   <div class="section-inner" id="events">
-    <div class="section-num">05 / 06 - EVENTS</div>
+    <div class="section-num">07 / 08 - EVENTS</div>
     <h2 class="section-title">线下活动</h2>
     <div class="section-title-en">Offline Events</div>
     <p class="section-sub">组局、培训、大会——把方法论带到真实场景。</p>
@@ -564,7 +641,7 @@ a{color:inherit;text-decoration:none}
 
 <!-- ========= FEED ========= -->
 <section class="section" id="feed">
-  <div class="section-num">06 / 06 - FEED</div>
+  <div class="section-num">08 / 08 - FEED</div>
   <h2 class="section-title">动态</h2>
   <div class="section-title-en">Content Hub</div>
   <p class="section-sub">图文、视频、教程——持续输出 AI 实战内容。</p>
