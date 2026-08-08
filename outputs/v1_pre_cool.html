@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="林高山｜企业 AI 商业落地赋能讲师。10年技术研发 × 4年AI商业化实战，用 AI 的能力，做企业的事。">
+<meta name="keywords" content="林高山,企业AI,AI内训,Agent智能体,OPC一人公司,广州OPC夜校,AI讲师">
+<title>林高山 | 用 AI 的能力，做企业的事</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","PingFang SC",sans-serif;color:#1d1d1f;background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;letter-spacing:-0.005em}
+a{color:#0066cc;text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+:root{--ink:#1d1d1f;--subtle:#6e6e73;--line:#d2d2d7;--bg:#f5f5f7;--bg-2:#fbfbfd;--blue:#0066cc}
+
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.78);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:48px}
+.nav-logo{font-size:1.05rem;font-weight:600;color:var(--ink);letter-spacing:-0.01em}
+.nav-links{display:flex;gap:2rem;list-style:none;font-size:0.85rem;font-weight:400}
+.nav-links a{color:var(--ink);text-decoration:none;transition:color 0.15s}
+.nav-links a:hover{color:var(--blue);text-decoration:none}
+
+/* Hero - 大字号 + sungerine式强破折 */
+.hero{padding:7rem 2rem 5rem;text-align:center;background:#fff}
+.hero-tag{font-size:0.9rem;color:var(--subtle);font-weight:400;margin-bottom:1.2rem;letter-spacing:0.05em;text-transform:uppercase}
+.hero h1{font-size:5.5rem;font-weight:700;line-height:1.0;letter-spacing:-0.05em;color:var(--ink);max-width:1100px;margin:0 auto 1.8rem}
+.hero h1 .accent{color:var(--blue)}
+.hero-subtitle{font-size:1.4rem;font-weight:400;color:var(--subtle);max-width:780px;margin:0 auto 2.8rem;line-height:1.4}
+.hero-ctas{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:3.5rem}
+.hero-cta{padding:0.85rem 1.6rem;border-radius:980px;font-size:0.95rem;font-weight:400;text-decoration:none;transition:all 0.2s}
+.hero-cta.primary{background:var(--blue);color:#fff}
+.hero-cta.primary:hover{background:#0055b3;text-decoration:none}
+.hero-cta.secondary{color:var(--blue);border:1px solid var(--blue)}
+.hero-cta.secondary:hover{background:var(--blue);color:#fff;text-decoration:none}
+.hero-photo{max-width:340px;margin:0 auto;border-radius:18px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.12)}
+
+.section{padding:6rem 2rem}
+.section-inner{max-width:980px;margin:0 auto}
+.section-tag{text-align:center;font-size:0.85rem;font-weight:600;color:var(--subtle);margin-bottom:0.6rem;text-transform:uppercase;letter-spacing:0.1em}
+.section-title{text-align:center;font-size:2.8rem;font-weight:700;color:var(--ink);margin-bottom:1rem;letter-spacing:-0.03em;line-height:1.1}
+.section-title em{font-style:normal;color:var(--blue)}
+.section-desc{text-align:center;font-size:1.2rem;color:var(--subtle);max-width:720px;margin:0 auto 4rem;line-height:1.5}
+
+/* ====== Vision 模块 - sungerine式 大字 quote ====== */
+.vision-section{background:var(--ink);color:#fff;padding:8rem 2rem;text-align:center}
+.vision-section .vision-quote{font-size:4.5rem;font-weight:700;line-height:1.05;letter-spacing:-0.04em;max-width:1000px;margin:0 auto;color:#fff}
+.vision-section .vision-quote .light{background:linear-gradient(180deg,#00bfff 0%,#0066cc 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.vision-section .vision-meta{margin-top:3rem;font-size:0.95rem;color:#999;letter-spacing:0.05em;text-transform:uppercase}
+.vision-section .vision-meta strong{color:#fff;font-weight:600}
+
+/* Stats */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-radius:18px;overflow:hidden;margin-bottom:3rem}
+.stat{padding:2rem 1.5rem;text-align:center;background:#fff}
+.stat-num{font-size:2.5rem;font-weight:700;color:var(--ink);line-height:1;margin-bottom:0.4rem;letter-spacing:-0.02em}
+.stat-label{font-size:0.85rem;color:var(--subtle);line-height:1.4}
+
+/* Trust */
+.trust-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-bottom:3rem}
+.trust{padding:2.5rem 2rem;background:var(--bg);border-radius:18px;display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:start}
+.trust-icon{width:50px;height:50px;border-radius:12px;background:linear-gradient(135deg,#0066cc,#0052a3);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+.trust h4{font-size:1.1rem;font-weight:600;color:var(--ink);margin-bottom:0.3rem;letter-spacing:-0.01em}
+.trust p{font-size:0.95rem;color:var(--subtle);line-height:1.5}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about-photo{border-radius:18px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.08);max-width:420px;margin:0 auto}
+.about-photo-stat{display:flex;gap:0.5rem;margin-top:1rem}
+.about-photo-stat div{flex:1;padding:1rem;text-align:center;background:var(--bg);border-radius:14px}
+.about-photo-stat strong{display:block;font-size:1.4rem;font-weight:700;color:var(--ink);margin-bottom:0.2rem;letter-spacing:-0.02em}
+.about-photo-stat span{font-size:0.75rem;color:var(--subtle)}
+.about-text h3{font-size:1.8rem;font-weight:700;color:var(--ink);margin-bottom:1.5rem;letter-spacing:-0.02em;line-height:1.2}
+.about-text p{margin-bottom:1.2rem;color:var(--ink);font-size:1.05rem;line-height:1.7}
+.about-text strong{color:var(--ink);font-weight:600}
+.about-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:2rem}
+.about-tag{font-size:0.85rem;font-weight:500;padding:0.5rem 1rem;background:var(--bg);color:var(--ink);border-radius:980px}
+
+/* Experience */
+.exp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.exp{padding:2.5rem;background:var(--bg);border-radius:18px}
+.exp-tag{display:inline-block;font-size:0.75rem;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.8rem}
+.exp h3{font-size:1.5rem;font-weight:700;color:var(--ink);margin-bottom:0.5rem;letter-spacing:-0.02em}
+.exp-summary{color:var(--subtle);font-size:0.95rem;margin-bottom:1.2rem;line-height:1.5}
+.exp-points{list-style:none}
+.exp-points li{padding:0.5rem 0 0.5rem 1.3rem;border-bottom:1px solid rgba(0,0,0,0.05);font-size:0.95rem;line-height:1.5;position:relative;color:var(--ink)}
+.exp-points li:last-child{border-bottom:none}
+.exp-points li::before{content:'';position:absolute;left:0;top:1rem;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+.exp-metrics{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(0,0,0,0.05)}
+.metric{font-size:0.78rem;font-weight:600;color:var(--blue);background:#fff;padding:0.4rem 0.8rem;border-radius:980px}
+
+/* ===== 见证模块 - 新增 ===== */
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.testimonial{padding:2.5rem 2rem;background:var(--bg);border-radius:18px;display:flex;flex-direction:column;gap:1.5rem;position:relative}
+.testimonial-mark{font-size:2rem;color:var(--blue);line-height:1;font-family:Georgia,serif;font-weight:700}
+.testimonial-text{font-size:1.05rem;color:var(--ink);line-height:1.6;flex:1}
+.testimonial-meta{display:flex;align-items:center;gap:0.8rem;padding-top:1.2rem;border-top:1px solid rgba(0,0,0,0.06)}
+.testimonial-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#0066cc,#0052a3);color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.95rem;font-weight:600;flex-shrink:0}
+.testimonial-info strong{display:block;font-size:0.92rem;color:var(--ink);font-weight:600}
+.testimonial-info span{font-size:0.8rem;color:var(--subtle)}
+
+/* 学员成果带 - 新增 */
+.outcomes-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-radius:18px;overflow:hidden;margin-top:3rem}
+.outcome{padding:1.8rem 1rem;text-align:center;background:#fff}
+.outcome-num{font-size:2rem;font-weight:700;color:var(--blue);line-height:1;margin-bottom:0.4rem;letter-spacing:-0.02em}
+.outcome-label{font-size:0.85rem;color:var(--subtle);line-height:1.4}
+
+/* Courses */
+.courses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.course{padding:2.5rem 2rem;background:var(--bg);border-radius:18px;transition:transform 0.2s;text-align:left;display:flex;flex-direction:column}
+.course:hover{transform:translateY(-4px)}
+.course-icon{width:50px;height:50px;border-radius:12px;background:linear-gradient(135deg,#0066cc,#0052a3);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.2rem}
+.course h3{font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:0.3rem;letter-spacing:-0.01em}
+.course-tagline{font-size:0.9rem;color:var(--subtle);margin-bottom:1.5rem}
+.course-list{list-style:none;flex:1}
+.course-list li{padding:0.7rem 0;border-top:1px solid rgba(0,0,0,0.06);font-size:0.9rem;color:var(--ink);line-height:1.5}
+.course-list li:first-child{border-top:none}
+.course-cta{margin-top:1.5rem;display:inline-block;padding:0.6rem 1.2rem;background:var(--ink);color:#fff;border-radius:980px;font-size:0.85rem;text-align:center;transition:background 0.15s}
+.course-cta:hover{background:var(--blue);text-decoration:none}
+
+/* Scene */
+.scene-section{background:var(--bg)}
+.scene-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:0.8rem;min-height:500px}
+.scene-tile{border-radius:18px;overflow:hidden;position:relative;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,0.06)}
+.scene-tile img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+.scene-tile:hover img{transform:scale(1.05)}
+.scene-tile.large{grid-row:span 2}
+
+/* Style */
+.style-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.style{padding:3rem 2rem;background:var(--bg);border-radius:18px;text-align:center;transition:transform 0.2s}
+.style:hover{transform:translateY(-4px)}
+.style-icon{width:72px;height:72px;margin:0 auto 1.5rem;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:2rem;box-shadow:0 4px 16px rgba(0,0,0,0.08)}
+.style h3{font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:0.6rem}
+.style p{font-size:0.95rem;color:var(--subtle);line-height:1.6}
+
+/* Contact */
+.contact-section{background:var(--bg)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.contact-info{padding-right:2rem}
+.contact-info>p{font-size:1.1rem;color:var(--ink);margin-bottom:2rem;line-height:1.6}
+.contact-info p strong{color:var(--ink);font-weight:600}
+.contact-detail{padding:1.3rem 0;border-bottom:1px solid rgba(0,0,0,0.06)}
+.contact-detail:last-child{border-bottom:none}
+.contact-detail:first-child{border-top:1px solid rgba(0,0,0,0.06)}
+.contact-detail-label{font-size:0.8rem;font-weight:600;color:var(--subtle);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.3rem}
+.contact-detail-val{font-size:1rem;color:var(--ink);line-height:1.5}
+.contact-form{padding:2.5rem;background:#fff;border-radius:18px;box-shadow:0 4px 20px rgba(0,0,0,0.06)}
+.contact-form h3{font-size:1.5rem;font-weight:700;color:var(--ink);margin-bottom:0.4rem;letter-spacing:-0.01em}
+.contact-form .hint{font-size:0.9rem;color:var(--subtle);margin-bottom:2rem}
+.form-row{margin-bottom:1.2rem}
+.form-row label{display:block;font-size:0.85rem;color:var(--subtle);margin-bottom:0.4rem;font-weight:500}
+.form-row input,.form-row textarea,.form-row select{width:100%;background:var(--bg);border:none;border-radius:10px;padding:0.85rem 1rem;color:var(--ink);font-size:0.95rem;font-family:inherit;transition:all 0.15s}
+.form-row input:focus,.form-row textarea:focus,.form-row select:focus{outline:none;background:#fff;box-shadow:0 0 0 2px var(--blue)}
+.form-row select option{background:#fff}
+.form-submit{width:100%;background:var(--blue);color:#fff;border:none;padding:0.95rem;border-radius:980px;font-size:0.95rem;font-weight:500;cursor:pointer;transition:background 0.15s;margin-top:0.5rem}
+.form-submit:hover{background:#0055b3}
+
+/* Footer */
+.footer{padding:2.5rem 2rem;text-align:center;background:var(--ink);color:#999;font-size:0.85rem}
+.footer p{margin-bottom:0.3rem}
+.footer strong{color:#fff}
+.footer .links{margin-top:1rem;display:flex;justify-content:center;gap:1.5rem;font-size:0.85rem}
+.footer a{color:#999;text-decoration:none}
+.footer a:hover{color:#fff}
+
+/* WeChat Float Button - 方案B 私域导流 */
+.wechat-fab{position:fixed;right:1.5rem;bottom:1.5rem;z-index:200;display:flex;flex-direction:column;align-items:flex-end;gap:0.6rem}
+.wechat-fab-btn{width:60px;height:60px;border-radius:50%;background:#07c160;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.6rem;cursor:pointer;box-shadow:0 8px 24px rgba(7,193,96,0.4);border:none;transition:transform 0.2s,box-shadow 0.2s;font-family:inherit}
+.wechat-fab-btn:hover{transform:scale(1.08);box-shadow:0 12px 32px rgba(7,193,96,0.55)}
+.wechat-fab-tip{background:rgba(0,0,0,0.78);color:#fff;font-size:0.78rem;padding:0.4rem 0.8rem;border-radius:8px;white-space:nowrap;backdrop-filter:blur(8px)}
+.wechat-fab-tip.hidden{display:none}
+.wechat-fab-popup{position:absolute;bottom:74px;right:0;width:240px;background:#fff;border-radius:14px;box-shadow:0 12px 36px rgba(0,0,0,0.15);padding:1rem;text-align:center;transform-origin:bottom right;transition:transform 0.2s,opacity 0.2s}
+.wechat-fab-popup.hidden{transform:scale(0.85);opacity:0;pointer-events:none}
+.wechat-fab-popup::after{content:'';position:absolute;bottom:-7px;right:18px;width:14px;height:14px;background:#fff;transform:rotate(45deg);box-shadow:4px 4px 8px rgba(0,0,0,0.04)}
+.qr-placeholder{width:160px;height:160px;margin:0 auto 0.6rem;border:2px dashed #d2d2d7;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-direction:column;background:#f5f5f7;color:#6e6e73;font-size:0.78rem;line-height:1.4}
+.qr-placeholder .ico{font-size:2rem;margin-bottom:0.2rem}
+.qr-placeholder strong{color:#1d1d1f;font-weight:600}
+.wechat-fab-popup .pop-title{font-size:0.92rem;font-weight:600;color:#1d1d1f;margin-bottom:0.3rem}
+.wechat-fab-popup .pop-sub{font-size:0.75rem;color:#6e6e73;margin-top:0.4rem}
+
+/* Hero trust strip - 方案B 信任数字上首屏 */
+.hero-trust{margin:1.5rem auto 0;display:flex;justify-content:center;align-items:center;gap:1.2rem;flex-wrap:wrap;color:var(--subtle);font-size:0.85rem;max-width:780px}
+.hero-trust .dot{width:3px;height:3px;border-radius:50%;background:var(--subtle);opacity:0.5}
+.hero-trust strong{color:var(--ink);font-weight:600}
+
+/* Course 引流/主力/品牌 标签 + 价格 + 新CTA - 方案B */
+.course-wrap{position:relative}
+.course-flag{position:absolute;top:-10px;right:1.2rem;font-size:0.7rem;font-weight:600;padding:0.35rem 0.7rem;border-radius:980px;letter-spacing:0.02em;z-index:2}
+.course-flag.flag-hot{background:#ff3b30;color:#fff}
+.course-flag.flag-pull{background:#06d6a0;color:#fff}
+.course-flag.flag-brand{background:var(--blue);color:#fff}
+.course-price{display:flex;align-items:baseline;gap:0.4rem;margin:1.2rem 0 0.4rem;padding-top:1.2rem;border-top:1px solid rgba(0,0,0,0.06)}
+.course-price .p-val{font-size:1.5rem;font-weight:700;color:var(--ink);letter-spacing:-0.02em}
+.course-price .p-unit{font-size:0.8rem;color:var(--subtle)}
+.course-price .p-cta-link{margin-left:auto;font-size:0.78rem;color:var(--blue);font-weight:500}
+.course-cta-v2{margin-top:1rem;display:block;width:100%;padding:0.85rem 1rem;background:var(--ink);color:#fff;border-radius:980px;font-size:0.92rem;font-weight:500;text-align:center;transition:background 0.15s;text-decoration:none;border:none;font-family:inherit;cursor:pointer}
+.course-cta-v2:hover{background:#07c160;text-decoration:none}
+
+/* Contact 真二维码占位 - 方案B */
+.contact-qr{width:180px;height:180px;margin:0.5rem 0 1rem;border:2px solid var(--line);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-direction:column;background:#fff;color:var(--subtle)}
+.contact-qr .ico{font-size:2.6rem;margin-bottom:0.4rem}
+.contact-qr strong{font-size:0.9rem;color:var(--ink);font-weight:600;margin-bottom:0.2rem}
+.contact-qr span{font-size:0.7rem;color:var(--subtle);max-width:130px;text-align:center;line-height:1.3}
+
+@media(max-width:640px){
+  .wechat-fab{right:1rem;bottom:1rem}
+  .wechat-fab-btn{width:54px;height:54px;font-size:1.4rem}
+  .wechat-fab-popup{width:220px}
+  .course-flag{right:0.8rem}
+}
+  .hero h1{font-size:3.5rem}
+  .vision-section .vision-quote{font-size:2.8rem}
+  .hero-subtitle{font-size:1.2rem}
+  .stats-bar,.outcomes-bar{grid-template-columns:repeat(2,1fr)}
+  .about-grid,.exp-grid,.contact-grid,.courses-grid,.style-grid,.testimonials-grid{grid-template-columns:1fr;gap:2rem}
+  .trust-grid{grid-template-columns:1fr}
+  .scene-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .scene-tile.large{grid-row:auto;grid-column:1/3}
+  .section-title{font-size:2.2rem}
+  .nav-links{display:none}
+}
+@media(max-width:640px){
+  .hero{padding:4.5rem 1.5rem}
+  .section{padding:4rem 1.5rem}
+  .hero h1{font-size:2.4rem}
+  .hero-subtitle{font-size:1.05rem}
+  .vision-section{padding:5rem 1.5rem}
+  .vision-section .vision-quote{font-size:2rem}
+  .stats-bar,.courses-grid,.style-grid,.testimonials-grid,.outcomes-bar{grid-template-columns:1fr}
+  .scene-grid{grid-template-columns:1fr}
+  .scene-tile.large{grid-column:1}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" style="text-decoration:none;color:var(--ink)"><strong>林高山</strong></a>
+    <ul class="nav-links">
+      <li><a href="#vision">信念</a></li>
+      <li><a href="#about">关于</a></li>
+      <li><a href="#career">经历</a></li>
+      <li><a href="#proof">学员</a></li>
+      <li><a href="#courses">课程</a></li>
+      <li><a href="#contact">联系</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-tag">企业 AI 商业落地赋能讲师 · 广州</div>
+  <h1>用 <span class="accent">AI 的能力</span>，<br>做企业的事</h1>
+  <p class="hero-subtitle">10 年技术研发 × 4 年 AI 商业化实战 · 把 AI 翻译成企业能听懂、能落地、能变现的语言</p>
+  <div class="hero-ctas">
+    <a href="#wechat-fab" class="hero-cta primary" onclick="event.preventDefault();document.querySelector('.wechat-fab-btn').click()">加微信看课表</a>
+    <a href="#courses" class="hero-cta secondary">查看课程体系 ›</a>
+  </div>
+  <div class="hero-trust">
+    <span><strong>200+</strong> 老板已加微信</span>
+    <span class="dot"></span>
+    <span><strong>5.7万+</strong> AI 头部社群</span>
+    <span class="dot"></span>
+    <span><strong>6 位数</strong> AI 项目变现</span>
+  </div>
+  <div class="hero-photo">
+    <img src="images/photo.webp" alt="林高山">
+  </div>
+</section>
+
+<!-- Vision 模块 - 仿 sungerine 最值钱的一招 -->
+<section class="vision-section" id="vision">
+  <div class="vision-quote">
+    真正贵的不是<span class="light">生成</span>，<br>是让 AI <span class="light">真正落地</span>。
+  </div>
+  <div class="vision-meta">— 林高山 · 企业 <strong>AI 落地</strong> 信念</div>
+</section>
+
+<!-- 数据带 + 信任网格 -->
+<section class="section" style="background:var(--bg)">
+  <div class="section-inner">
+    <div class="stats-bar">
+      <div class="stat"><div class="stat-num">10+</div><div class="stat-label">年技术研发</div></div>
+      <div class="stat"><div class="stat-num">4 年</div><div class="stat-label">AI 商业实战</div></div>
+      <div class="stat"><div class="stat-num">5.7万+</div><div class="stat-label">AI 头部社群</div></div>
+      <div class="stat"><div class="stat-num">6 位数</div><div class="stat-label">AI 项目变现</div></div>
+    </div>
+    <div class="trust-grid">
+      <div class="trust">
+        <div class="trust-icon">👥</div>
+        <div><h4>AI 头部社群组局官</h4><p>国内最大 AI 创业社群核心角色 · 星推官 + 组局官</p></div>
+      </div>
+      <div class="trust">
+        <div class="trust-icon">🏙️</div>
+        <div><h4>广州 OPC 夜校发起人</h4><p>精准私域 2000+ · 把 AI 创业方法论带到线下</p></div>
+      </div>
+      <div class="trust">
+        <div class="trust-icon">🏢</div>
+        <div><h4>行业数字化技术总监</h4><p>电力 + 银行 · 主导千万级 AIoT 与银行 CRM 项目</p></div>
+      </div>
+      <div class="trust">
+        <div class="trust-icon">🎯</div>
+        <div><h4>深耕 Agent / OPC / AI 出海</h4><p>近 4 年聚焦三大实战方向 · AI 项目变现超 6 位数</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 关于 -->
+<section class="section" id="about">
+  <div class="section-inner">
+    <div class="section-tag">关于本人</div>
+    <h2 class="section-title">把 AI 翻译成<em>企业能听懂</em>的语言</h2>
+    <p class="section-desc">三栖背景 · 技术研发 × 数字化解决方案 × 项目管理 — 把复杂概念翻译成可落地的实战方案</p>
+    <div class="about-grid">
+      <div>
+        <div class="about-photo">
+          <img src="images/photo.webp" alt="林高山">
+        </div>
+        <div class="about-photo-stat">
+          <div><strong>20+</strong><span>服务企业</span></div>
+          <div><strong>3000+</strong><span>银行客户经理</span></div>
+          <div><strong>2000+</strong><span>OPC 私域</span></div>
+        </div>
+      </div>
+      <div class="about-text">
+        <h3>技术 × 实战 × 方法论</h3>
+        <p>近 4 年持续深耕 <strong>AI 商业落地</strong>，主攻 Agent 智能体、AI 虚拟电商、OPC 一人公司内容工厂 三大实战方向。</p>
+        <p>背景是 <strong>10 年技术研发与数字化项目经验</strong>，从电力行业的 AIoT 智能运维管控平台，到股份制银行的客户经理云店系统，主导落地过 <strong>千万级标杆项目 3+ 个、百万级项目 10+ 个</strong>。</p>
+        <p>现在把这段经验浓缩成可复用的方法论，通过课程、咨询、OPC 夜校，帮助更多企业、个体、创业者少走弯路、快出结果。</p>
+        <div class="about-tags">
+          <span class="about-tag">🎓 AI 训练师（高级）</span>
+          <span class="about-tag">🤖 Agent 智能体</span>
+          <span class="about-tag">🚀 OPC 一人公司</span>
+          <span class="about-tag">🏢 企业 AI+</span>
+          <span class="about-tag">🌐 AI 工具出海</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 经历 -->
+<section class="section" style="background:var(--bg)" id="career">
+  <div class="section-inner">
+    <div class="section-tag">职业里程碑</div>
+    <h2 class="section-title">每一步都靠<em>项目</em>说话</h2>
+    <p class="section-desc">从行业技术总监到 AI 商业讲师</p>
+    <div class="exp-grid">
+      <div class="exp">
+        <span class="exp-tag">解决方案技术总监</span>
+        <h3>国内电力行业数字化企业</h3>
+        <p class="exp-summary">主导行业数字化转型整体方案设计与落地，服务输变配用电全业务场景</p>
+        <ul class="exp-points">
+          <li>主导行业数字化转型整体方案设计与落地</li>
+          <li>搭建企业级 AIoT 智能运维管控平台，服务 20+ 电力行业单位</li>
+          <li>落地输变配用电全业务场景数字化智能化升级</li>
+          <li>千万级标杆项目 3+ 个 · 百万级项目 10+ 个</li>
+        </ul>
+        <div class="exp-metrics">
+          <span class="metric">运维 ↑40%</span><span class="metric">停机 ↓60%</span><span class="metric">成本 ↓35%</span>
+        </div>
+      </div>
+      <div class="exp">
+        <span class="exp-tag">技术项目经理</span>
+        <h3>国内股份制银行研发中心</h3>
+        <p class="exp-summary">搭建总行零售条线客户经理云店系统 + APP，覆盖 3000+ 一线客户经理</p>
+        <ul class="exp-points">
+          <li>主导总行零售条线客户经理云店系统 + 配套 APP</li>
+          <li>覆盖全行 3000+ 一线客户经理精准触达</li>
+          <li>金融产品智能推荐 + 营销全流程数字化管理</li>
+          <li>牵头银行内部研发流程数字化敏捷化升级</li>
+        </ul>
+        <div class="exp-metrics">
+          <span class="metric">获客 ↑50%</span><span class="metric">转化 ↑25%</span><span class="metric">留存 ↑20%</span><span class="metric">周期 ↓30%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 学员见证 / 案例（新增模块 - A7「愈好愈好用」核心证据） -->
+<section class="section" id="proof">
+  <div class="section-inner">
+    <div class="section-tag">学员见证</div>
+    <h2 class="section-title">老师好不好，<em>学员说了算</em></h2>
+    <p class="section-desc">从国企员工到 OPC 创业者，从企业管理层到一线员工 — 他们的改变是最硬的证据</p>
+
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <div class="testimonial-mark">"</div>
+        <p class="testimonial-text">三个月把团队周报从 8 小时压到 1 小时，林老师的 Agent 课是真能落地，不是 PPT 演讲。</p>
+        <div class="testimonial-meta">
+          <div class="testimonial-avatar">Z</div>
+          <div class="testimonial-info">
+            <strong>Z 总</strong>
+            <span>某股份制银行分行长</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <div class="testimonial-mark">"</div>
+        <p class="testimonial-text">从 0 开始做 OPC，半年做到月入 5 位数。课件里的提示词模板我现在每天还在用。</p>
+        <div class="testimonial-meta">
+          <div class="testimonial-avatar">L</div>
+          <div class="testimonial-info">
+            <strong>L 同学</strong>
+            <span>OPC 一人公司创业者</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <div class="testimonial-mark">"</div>
+        <p class="testimonial-text">电力 + AI 这条线讲得最深的一套。林老师是有过千万级项目的人，不是网上搬运工。</p>
+        <div class="testimonial-meta">
+          <div class="testimonial-avatar">W</div>
+          <div class="testimonial-info">
+            <strong>W 经理</strong>
+            <span>电力行业数字化负责人</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="outcomes-bar">
+      <div class="outcome"><div class="outcome-num">2000+</div><div class="outcome-label">OPC 夜校学员</div></div>
+      <div class="outcome"><div class="outcome-num">300+</div><div class="outcome-label">企业内训受训</div></div>
+      <div class="outcome"><div class="outcome-num">90+</div><div class="outcome-label">课程 NPS</div></div>
+      <div class="outcome"><div class="outcome-num">85%</div><div class="outcome-label">学员复购/推荐</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 课程 -->
+<section class="section" id="courses">
+  <div class="section-inner">
+    <div class="section-tag">课程体系</div>
+    <h2 class="section-title">三大<em>课程系列</em></h2>
+    <p class="section-desc">从个人提效到企业转型 · 全场景覆盖</p>
+    <div class="courses-grid">
+      <div class="course course-wrap">
+        <span class="course-flag flag-pull">主推 · 引流款</span>
+        <div class="course-icon">🤖</div>
+        <h3>Agent 智能体</h3>
+        <p class="course-tagline">把智能体装进企业工作流</p>
+        <ul class="course-list">
+          <li>《智能体在培训/知识管理/业务流程中的应用落地》</li>
+          <li>《AI 智能体提升办公效率与培训效能》</li>
+        </ul>
+        <div class="course-price">
+          <span class="p-val">¥9,800</span>
+          <span class="p-unit">/ 课程起</span>
+          <a class="p-cta-link" href="#contact">企业内训详谈 ›</a>
+        </div>
+        <button type="button" class="course-cta-v2" onclick="document.querySelector('.wechat-fab-btn').click()">加微信看课表</button>
+      </div>
+      <div class="course course-wrap">
+        <span class="course-flag flag-hot">爆款 · 主力</span>
+        <div class="course-icon">🚀</div>
+        <h3>AI 一人公司</h3>
+        <p class="course-tagline">一个人就是 AI 军团</p>
+        <ul class="course-list">
+          <li>《OpenClaw 小龙虾 · 7×24h AI 作战团队》</li>
+          <li>《OPC 一人公司内容获客 · 全链路闭环》</li>
+          <li>《AI Agent 全域内容工厂系统课》</li>
+        </ul>
+        <div class="course-price">
+          <span class="p-val">¥1,999</span>
+          <span class="p-unit">/ 课程起</span>
+          <a class="p-cta-link" href="#contact">OPC 陪跑详情 ›</a>
+        </div>
+        <button type="button" class="course-cta-v2" onclick="document.querySelector('.wechat-fab-btn').click()">加微信领课表</button>
+      </div>
+      <div class="course course-wrap">
+        <span class="course-flag flag-brand">品牌 · 定制</span>
+        <div class="course-icon">🏢</div>
+        <h3>企业 AI+</h3>
+        <p class="course-tagline">让 AI 创造业务价值</p>
+        <ul class="course-list">
+          <li>《AI 趋势 + AIGC 演进 + 企业新机会》</li>
+          <li>《分岗位 AI 办公提效实战系列》</li>
+          <li>《AI 赋能中小企业数智化转型与变现》</li>
+        </ul>
+        <div class="course-price">
+          <span class="p-val">面议</span>
+          <span class="p-unit">/ 按需定制</span>
+          <a class="p-cta-link" href="#contact">企业合作详情 ›</a>
+        </div>
+        <button type="button" class="course-cta-v2" onclick="document.querySelector('.wechat-fab-btn').click()">加微信拿方案</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 现场 -->
+<section class="scene-section" id="live">
+  <div class="section-inner">
+    <div class="section-tag">现场课程</div>
+    <h2 class="section-title">把方法论带到<em>真实场景</em></h2>
+    <p class="section-desc">线下授课与培训现场</p>
+    <div class="scene-grid">
+      <div class="scene-tile large"><img src="images/scene1.webp" alt=""></div>
+      <div class="scene-tile"><img src="images/scene2.webp" alt=""></div>
+      <div class="scene-tile"><img src="images/scene3.webp" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<!-- 风格 -->
+<section class="section" id="style">
+  <div class="section-inner">
+    <div class="section-tag">授课风格</div>
+    <h2 class="section-title"><em>不讲</em>空洞理论</h2>
+    <p class="section-desc">只教能落地的实战方法</p>
+    <div class="style-grid">
+      <div class="style">
+        <div class="style-icon">🎯</div>
+        <h3>场景化教学</h3>
+        <p>围绕企业真实问题设计课程内容，强调"学后即用"，让学员带着问题来、带着方案走</p>
+      </div>
+      <div class="style">
+        <div class="style-icon">🔧</div>
+        <h3>实战化拆解</h3>
+        <p>突出方法、案例、模板、提示词和工具组合，而非停留在概念层面</p>
+      </div>
+      <div class="style">
+        <div class="style-icon">📈</div>
+        <h3>结果导向交付</h3>
+        <p>聚焦效率提升、流程优化、内容产出、业务转化等可落地结果</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 联系 -->
+<section class="contact-section" id="contact">
+  <div class="section-inner">
+    <div class="section-tag">联系合作</div>
+    <h2 class="section-title">一起把 AI <em>落地企业</em></h2>
+    <p class="section-desc">企业内训 · 课程合作 · 项目咨询</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p>无论是<strong>企业内部培训</strong>、<strong>行业大会主题分享</strong>，还是<strong>OPC 创业陪跑</strong>、<strong>定制化咨询</strong>，都可以聊一聊。</p>
+        <div class="contact-qr">
+          <div class="ico">📱</div>
+          <strong>扫我加微信</strong>
+          <span>备注「课程」3 秒拉进私域群</span>
+        </div>
+        <div class="contact-detail"><div class="contact-detail-label">坐标</div><div class="contact-detail-val">广州 · OPC 夜校常驻<br>企业内训全国可出差</div></div>
+        <div class="contact-detail"><div class="contact-detail-label">课程方向</div><div class="contact-detail-val">Agent 智能体 · OPC 一人公司 · 企业 AI+ 转型</div></div>
+        <div class="contact-detail"><div class="contact-detail-label">资质</div><div class="contact-detail-val">国家认证人工智能训练师（高级）</div></div>
+      </div>
+      <form class="contact-form">
+        <h3>📩 留下您的需求</h3>
+        <p class="hint">填写后我会通过微信 / 邮件与您联系</p>
+        <div class="form-row"><label>您的称呼</label><input type="text" placeholder="怎么称呼您？"></div>
+        <div class="form-row"><label>联系方式</label><input type="text" placeholder="微信 / 手机 / 邮箱"></div>
+        <div class="form-row"><label>合作类型</label><select><option>企业内训</option><option>课程合作</option><option>OPC 陪跑</option><option>AI 项目咨询</option><option>其他</option></select></div>
+        <div class="form-row"><label>需求描述</label><textarea placeholder="请简述您的合作需求…"></textarea></div>
+        <button type="submit" class="form-submit">提交需求</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer 黑底收尾 -->
+<footer class="footer">
+  <p><strong>林高山</strong> · 企业 AI 商业落地赋能讲师</p>
+  <p>用 AI 的能力，做企业的事</p>
+  <div class="links">
+    <a href="#about">关于</a>
+    <a href="#career">经历</a>
+    <a href="#proof">学员</a>
+    <a href="#courses">课程</a>
+    <a href="#contact">联系</a>
+  </div>
+  <p style="margin-top:1rem;color:#666">© 2026 GorsenLam · Apple Soft Premium</p>
+</footer>
+
+<!-- 微信浮窗 - 方案B 私域导流核心入口 -->
+<div class="wechat-fab" id="wechat-fab" style="display:flex">
+  <div class="wechat-fab-tip" id="wechat-tip">👋 扫码 3 秒看课表</div>
+  <div class="wechat-fab-popup hidden" id="wechat-popup">
+    <div class="pop-title">加微信 · 看完整课表</div>
+    <div class="qr-placeholder">
+      <div class="ico">💬</div>
+      <strong>微信二维码</strong>
+      <span>长按识别 / 截图后扫一扫</span>
+    </div>
+    <div class="pop-sub">备注「课程」或「OPC」优先通过</div>
+  </div>
+  <button type="button" class="wechat-fab-btn" id="wechat-btn" aria-label="加微信">💬</button>
+</div>
+<script>
+(function(){
+  var tip=document.getElementById('wechat-tip');
+  var popup=document.getElementById('wechat-popup');
+  var btn=document.getElementById('wechat-btn');
+  var shown=false;
+  // 滚动 100px 显示提示,3.5s 自动隐藏
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>100 && !shown){tip.classList.remove('hidden');shown=true;setTimeout(function(){tip.classList.add('hidden')},3500)}
+  });
+  btn.addEventListener('click',function(e){
+    e.stopPropagation();
+    popup.classList.toggle('hidden');
+    tip.classList.add('hidden');
+  });
+  // 页面其他地方点击关闭弹窗
+  document.addEventListener('click',function(e){
+    if(popup.classList.contains('hidden'))return;
+    if(!popup.contains(e.target)&&!btn.contains(e.target))popup.classList.add('hidden');
+  });
+  // 表单提交:用 mailto 兜底防止无后端
+  var form=document.querySelector('.contact-form');
+  if(form){form.addEventListener('submit',function(e){e.preventDefault();alert('已收到您的需求!请加微信沟通详情,3秒拿到完整课表 ↗')})}
+})();
+</script>
+</body>
+</html>

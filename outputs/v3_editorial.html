@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>林高山 | AI 商业落地</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:17px}
+body{font-family:"Georgia","Times New Roman","Songti SC",serif;background:#fff;color:#1a1a1a;line-height:1.8;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.sans{font-family:-apple-system,BlinkMacSystemFont,"Inter","PingFang SC",sans-serif}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e5e5e5}
+.nav-inner{max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;height:56px}
+.nav-logo{font-family:"Georgia",serif;font-size:1.1rem;font-weight:700;font-style:italic;letter-spacing:-0.01em}
+.nav-links{display:flex;gap:1.8rem;font-size:0.82rem;list-style:none;color:#666}
+.nav-links a:hover{color:#1a1a1a;text-decoration:underline}
+@media(max-width:640px){.nav-links{display:none}}
+
+/* Hero - 杂志封面 */
+.hero{max-width:720px;margin:0 auto;padding:4rem 1.5rem 3rem}
+.hero-eyebrow{font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:#999;margin-bottom:1.5rem;font-family:-apple-system,sans-serif}
+.hero h1{font-size:3.5rem;font-weight:400;line-height:1.15;letter-spacing:-0.02em;margin-bottom:1.5rem}
+.hero h1 em{font-style:italic;color:#c0392b}
+.hero-lede{font-size:1.2rem;color:#555;line-height:1.6;max-width:580px;margin-bottom:2rem;font-style:italic}
+.hero-byline{font-size:0.8rem;color:#999;font-family:-apple-system,sans-serif;display:flex;align-items:center;gap:0.5rem;padding-top:1.5rem;border-top:1px solid #e5e5e5}
+.hero-byline strong{color:#1a1a1a;font-weight:600}
+@media(max-width:640px){.hero h1{font-size:2.2rem}.hero-lede{font-size:1rem}}
+
+/* Hero photo */
+.hero-photo{max-width:720px;margin:0 auto;padding:0 1.5rem 3rem}
+.hero-photo img{width:100%;height:360px;object-fit:cover;border-radius:2px}
+.hero-caption{font-size:0.75rem;color:#999;margin-top:0.5rem;font-style:italic;text-align:center}
+
+/* Stats - 报纸数据栏 */
+.stats-bar{max-width:720px;margin:0 auto;padding:2rem 1.5rem;border-top:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5;display:flex;justify-content:space-between;text-align:center}
+.stat-col .v{font-size:1.8rem;font-weight:700;color:#1a1a1a;font-family:-apple-system,sans-serif;letter-spacing:-0.02em}
+.stat-col .l{font-size:0.72rem;color:#999;margin-top:0.2rem;font-family:-apple-system,sans-serif}
+@media(max-width:640px){.stats-bar{flex-wrap:wrap;gap:1rem}}
+
+/* Section */
+.section{max-width:720px;margin:0 auto;padding:4rem 1.5rem}
+.section-num{font-size:0.75rem;color:#c0392b;font-weight:700;font-family:-apple-system,sans-serif;letter-spacing:0.1em;margin-bottom:0.5rem}
+.section-title{font-size:1.8rem;font-weight:400;line-height:1.3;margin-bottom:2rem;padding-bottom:1rem;border-bottom:2px solid #1a1a1a}
+
+/* Tutorials - 杂志专栏 */
+.tut-article{padding:1.5rem 0;border-bottom:1px solid #e5e5e5;display:grid;grid-template-columns:60px 1fr;gap:1.5rem}
+.tut-article:last-child{border-bottom:none}
+.tut-num{font-size:2rem;font-weight:400;color:#ccc;font-family:"Georgia",serif;font-style:italic;line-height:1}
+.tut-cat{font-size:0.72rem;color:#c0392b;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;font-family:-apple-system,sans-serif;margin-bottom:0.3rem;display:flex;align-items:center;gap:0.4rem}
+.tut-new{background:#c0392b;color:#fff;font-size:0.6rem;padding:0.1rem 0.4rem;border-radius:2px;font-family:-apple-system,sans-serif}
+.tut-article h3{font-size:1.2rem;font-weight:400;margin-bottom:0.3rem;line-height:1.3}
+.tut-article p{font-size:0.9rem;color:#666;line-height:1.6}
+@media(max-width:640px){.tut-article{grid-template-columns:1fr;gap:0.5rem}.tut-num{display:none}}
+
+/* Events - 时空线 */
+.event-timeline{position:relative;padding-left:2rem}
+.event-timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:#e5e5e5}
+.event-entry{padding-bottom:2rem;position:relative}
+.event-entry::before{content:'';position:absolute;left:-2.1rem;top:0.3rem;width:9px;height:9px;border-radius:50%;background:#c0392b;border:2px solid #fff;box-shadow:0 0 0 1px #c0392b}
+.event-date{font-size:0.75rem;color:#c0392b;font-weight:600;font-family:-apple-system,sans-serif;letter-spacing:0.05em;margin-bottom:0.3rem}
+.event-entry h3{font-size:1.1rem;font-weight:400;margin-bottom:0.3rem}
+.event-type-text{font-size:0.85rem;color:#999;font-style:italic}
+.event-photo{margin-top:0.6rem;border-radius:2px;overflow:hidden;max-width:400px}
+.event-photo img{width:100%;height:200px;object-fit:cover}
+
+/* Moments - 引用式 */
+.moment-quote{padding:2rem 0;border-bottom:1px solid #e5e5e5}
+.moment-quote:last-child{border-bottom:none}
+.moment-quote-mark{font-size:3rem;color:#c0392b;line-height:0.5;font-family:"Georgia",serif;margin-bottom:0.5rem}
+.moment-quote-text{font-size:1.15rem;line-height:1.7;color:#1a1a1a;font-style:italic;margin-bottom:0.8rem}
+.moment-quote-meta{font-size:0.8rem;color:#999;font-family:-apple-system,sans-serif}
+.moment-quote-meta strong{color:#1a1a1a}
+.moment-quote-tags{display:flex;gap:0.4rem;margin-top:0.6rem}
+.moment-quote-tag{font-size:0.7rem;color:#c0392b;border:1px solid #c0392b;padding:0.1rem 0.5rem;border-radius:2px;font-family:-apple-system,sans-serif}
+
+/* Contact */
+.contact{max-width:720px;margin:0 auto;padding:4rem 1.5rem;text-align:center;border-top:2px solid #1a1a1a}
+.contact h2{font-size:2rem;font-weight:400;margin-bottom:0.8rem}
+.contact p{font-size:1rem;color:#666;margin-bottom:2rem;font-style:italic}
+.contact-btn{display:inline-block;padding:0.8rem 2rem;background:#1a1a1a;color:#fff;font-size:0.9rem;font-family:-apple-system,sans-serif;font-weight:600;transition:background 0.2s}
+.contact-btn:hover{background:#c0392b}
+
+/* Footer */
+.footer{max-width:720px;margin:0 auto;padding:2rem 1.5rem;text-align:center;font-size:0.8rem;color:#999;border-top:1px solid #e5e5e5}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">林高山</a>
+    <ul class="nav-links sans">
+      <li><a href="#tutorials">教程</a></li>
+      <li><a href="#events">活动</a></li>
+      <li><a href="#moments">动态</a></li>
+      <li><a href="#contact">联系</a></li>
+    </ul>
+  </div>
+</nav>
+
+<article class="hero" id="top">
+  <div class="hero-eyebrow sans">AI 商业落地 · 人物专访</div>
+  <h1>用 AI 的能力，<br>做 <em>企业的事</em>。</h1>
+  <p class="hero-lede">十年技术研发，四年 AI 商业化实战。他把 AI 翻译成企业能听懂的语言，然后在广州一间教室里，一个一个地教老板们落地。</p>
+  <div class="hero-byline">
+    <strong>林高山</strong> · 企业 AI 落地讲师 · 广州
+  </div>
+</article>
+
+<div class="hero-photo">
+  <img src="images/photo.webp" alt="林高山">
+  <div class="hero-caption">林高山，广州 OPC 夜校发起人</div>
+</div>
+
+<div class="stats-bar sans">
+  <div class="stat-col"><div class="v">10+</div><div class="l">年技术</div></div>
+  <div class="stat-col"><div class="v">5.7万</div><div class="l">社群</div></div>
+  <div class="stat-col"><div class="v">200+</div><div class="l">学员</div></div>
+  <div class="stat-col"><div class="v">6位数</div><div class="l">变现</div></div>
+</div>
+
+<section class="section" id="tutorials">
+  <div class="section-num sans">01</div>
+  <h2 class="section-title">最新教程</h2>
+
+  <div class="tut-article">
+    <div class="tut-num">01</div>
+    <div>
+      <div class="tut-cat sans">AI 办公助手 <span class="tut-new">NEW</span></div>
+      <h3>WorkBuddy 101：从0到1搭建企业AI办公助手</h3>
+      <p>覆盖邮件、日程、文档、会议全场景，让每个员工拥有一个AI助手。</p>
+    </div>
+  </div>
+  <div class="tut-article">
+    <div class="tut-num">02</div>
+    <div>
+      <div class="tut-cat sans">AI 编程 <span class="tut-new">NEW</span></div>
+      <h3>Codex 实战指南：从需求到代码15分钟</h3>
+      <p>用Codex实现自动化编程，程序员效率提升10倍的完整路线图。</p>
+    </div>
+  </div>
+  <div class="tut-article">
+    <div class="tut-num">03</div>
+    <div>
+      <div class="tut-cat sans">AI 原生团队</div>
+      <h3>Hermes Agent：搭建7×24h AI作战团队</h3>
+      <p>1人+AI军团=1个工作室，从搭建到部署的完整方案。</p>
+    </div>
+  </div>
+  <div class="tut-article">
+    <div class="tut-num">04</div>
+    <div>
+      <div class="tut-cat sans">工具集成</div>
+      <h3>MCP 协议实战：让AI调用任何工具</h3>
+      <p>Model Context Protocol从原理到落地的完整指南。</p>
+    </div>
+  </div>
+  <div class="tut-article">
+    <div class="tut-num">05</div>
+    <div>
+      <div class="tut-cat sans">自动化</div>
+      <h3>Agent 工作流设计模式</h3>
+      <p>多Agent协作从单点到全自动的设计方法论。</p>
+    </div>
+  </div>
+  <div class="tut-article">
+    <div class="tut-num">06</div>
+    <div>
+      <div class="tut-cat sans">创业实战</div>
+      <h3>OPC 一人公司方法论</h3>
+      <p>1人+AI军团=1家公司，内容获客到变现全链路。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="events">
+  <div class="section-num sans">02</div>
+  <h2 class="section-title">线下活动</h2>
+  <div class="event-timeline">
+    <div class="event-entry">
+      <div class="event-date">2026.07 · 广州</div>
+      <h3>广州 OPC 夜校</h3>
+      <div class="event-type-text">线下组局 · 30+ 老板参与</div>
+      <div class="event-photo"><img src="images/scene1.webp" alt=""></div>
+    </div>
+    <div class="event-entry">
+      <div class="event-date">2026.06 · 广州</div>
+      <h3>AI 智创汇沙龙</h3>
+      <div class="event-type-text">线下分享</div>
+      <div class="event-photo"><img src="images/scene2.webp" alt=""></div>
+    </div>
+    <div class="event-entry">
+      <div class="event-date">2026.05 · 企业现场</div>
+      <h3>企业 AI+ 内训</h3>
+      <div class="event-type-text">企业培训</div>
+      <div class="event-photo"><img src="images/scene3.webp" alt=""></div>
+    </div>
+    <div class="event-entry">
+      <div class="event-date">2026.04 · 大会</div>
+      <h3>AI 峰会演讲</h3>
+      <div class="event-type-text">大会演讲</div>
+      <div class="event-photo"><img src="images/photo.webp" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="moments">
+  <div class="section-num sans">03</div>
+  <h2 class="section-title">票圈动态</h2>
+
+  <div class="moment-quote">
+    <div class="moment-quote-mark">"</div>
+    <p class="moment-quote-text">WorkBuddy教程上线了，这周拆了3个企业AI办公场景，发现最大的坑不是技术而是流程。技术选型只占30%，70%时间在帮客户理清工作流。AI落地的本质是流程重构。</p>
+    <div class="moment-quote-meta sans"><strong>林高山</strong> · 7月19日</div>
+    <div class="moment-quote-tags"><span class="moment-quote-tag sans">#WorkBuddy</span><span class="moment-quote-tag sans">#AI落地</span></div>
+  </div>
+  <div class="moment-quote">
+    <div class="moment-quote-mark">"</div>
+    <p class="moment-quote-text">广州OPC夜校第8期结束，来了30+老板。最大的感受：老板们不是不想用AI，是没人帮他们把AI翻译成业务语言。这就是我的价值。</p>
+    <div class="moment-quote-meta sans"><strong>林高山</strong> · 7月15日</div>
+    <div class="moment-quote-tags"><span class="moment-quote-tag sans">#OPC夜校</span></div>
+  </div>
+  <div class="moment-quote">
+    <div class="moment-quote-mark">"</div>
+    <p class="moment-quote-text">用Codex写了一整天代码，体验：从需求到可运行代码只要15分钟。程序员不会失业，但不会用AI的程序员会。</p>
+    <div class="moment-quote-meta sans"><strong>林高山</strong> · 7月10日</div>
+    <div class="moment-quote-tags"><span class="moment-quote-tag sans">#Codex</span><span class="moment-quote-tag sans">#AI编程</span></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>一起把 AI 落地</h2>
+  <p>企业内训 · 课程合作 · 项目咨询</p>
+  <a href="weixin://" class="contact-btn sans">加微信聊聊</a>
+</section>
+
+<footer class="footer">
+  © 2026 林高山 · 广州 · AI 商业落地
+</footer>
+
+</body>
+</html>

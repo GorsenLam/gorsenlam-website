@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>林高山 | AI 落地笔记</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Inter","PingFang SC",sans-serif;background:#faf9f7;color:#3d3d3d;line-height:1.7;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+:root{--bg:#faf9f7;--card:#fff;--line:#ece8e1;--text:#3d3d3d;--dim:#8a8580;--accent:#d97706;--soft:#fef3c7;--ink:#1a1a1a}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:100;background:rgba(250,249,247,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:780px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;height:52px}
+.nav-logo{font-size:1rem;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:0.4rem}
+.nav-logo .emoji{font-size:1.1rem}
+.nav-links{display:flex;gap:1.5rem;font-size:0.85rem;color:var(--dim);list-style:none}
+.nav-links a:hover{color:var(--accent)}
+@media(max-width:640px){.nav-links{display:none}}
+
+/* Hero - 个人故事感 */
+.hero{max-width:780px;margin:0 auto;padding:5rem 1.5rem 3rem;text-align:center}
+.hero-av{width:96px;height:96px;border-radius:50%;overflow:hidden;margin:0 auto 1.5rem;box-shadow:0 8px 32px rgba(0,0,0,0.08);border:3px solid #fff}
+.hero-av img{width:100%;height:100%;object-fit:cover}
+.hero h1{font-size:2.8rem;font-weight:700;color:var(--ink);letter-spacing:-0.02em;line-height:1.2;margin-bottom:0.8rem}
+.hero h1 .hl{background:linear-gradient(180deg,transparent 60%,var(--soft) 60%);padding:0 0.1em}
+.hero-sub{font-size:1.1rem;color:var(--dim);max-width:540px;margin:0 auto 2rem}
+.hero-stats{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap}
+.hero-stat{text-align:center}
+.hero-stat .v{font-size:1.6rem;font-weight:700;color:var(--ink)}
+.hero-stat .l{font-size:0.78rem;color:var(--dim);margin-top:0.1rem}
+
+/* Section */
+.section{max-width:780px;margin:0 auto;padding:3rem 1.5rem}
+.section-title{font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.5rem;padding-bottom:0.8rem;border-bottom:2px solid var(--line)}
+.section-title .icon{font-size:1.1rem}
+
+/* Tutorials - 博客文章列表 */
+.tut-list{display:flex;flex-direction:column;gap:0.8rem}
+.tut-item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.5rem;transition:all 0.2s;display:flex;align-items:start;gap:1rem}
+.tut-item:hover{border-color:var(--accent);box-shadow:0 4px 16px rgba(217,119,6,0.08);transform:translateX(4px)}
+.tut-emoji{font-size:1.5rem;flex-shrink:0;margin-top:0.1rem}
+.tut-body{flex:1}
+.tut-tag-row{display:flex;align-items:center;gap:0.4rem;margin-bottom:0.3rem}
+.tut-cat{font-size:0.72rem;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:0.03em}
+.tut-new{background:#fee2e2;color:#dc2626;font-size:0.62rem;font-weight:700;padding:0.1rem 0.4rem;border-radius:4px}
+.tut-item h3{font-size:1.05rem;font-weight:600;color:var(--ink);margin-bottom:0.2rem}
+.tut-item p{font-size:0.85rem;color:var(--dim);line-height:1.5}
+.tut-arrow{color:var(--dim);align-self:center;transition:transform 0.2s}
+.tut-item:hover .tut-arrow{color:var(--accent);transform:translateX(4px)}
+
+/* Events - 相册瀑布流 */
+.event-wall{column-count:2;column-gap:1rem}
+.event-photo{break-inside:avoid;margin-bottom:1rem;border-radius:12px;overflow:hidden;position:relative;background:var(--card)}
+.event-photo img{width:100%;transition:transform 0.4s}
+.event-photo:hover img{transform:scale(1.04)}
+.event-photo .caption{position:absolute;bottom:0;left:0;right:0;padding:1rem;background:linear-gradient(0deg,rgba(0,0,0,0.7) 0%,transparent 100%);color:#fff}
+.event-photo .caption .type{font-size:0.7rem;color:var(--soft);font-weight:600;text-transform:uppercase}
+.event-photo .caption h3{font-size:0.95rem;font-weight:600;margin-top:0.2rem}
+.event-photo .caption .date{font-size:0.75rem;opacity:0.8}
+@media(max-width:640px){.event-wall{column-count:1}}
+
+/* Moments - 朋友圈卡片流 */
+.moment-feed{display:flex;flex-direction:column;gap:1rem}
+.moment-card{background:var(--card);border-radius:14px;padding:1.5rem;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.moment-head{display:flex;align-items:center;gap:0.7rem;margin-bottom:0.8rem}
+.moment-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#f59e0b,#d97706);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:0.95rem}
+.moment-name{font-size:0.95rem;font-weight:600;color:var(--ink)}
+.moment-date{font-size:0.75rem;color:var(--dim)}
+.moment-text{font-size:0.92rem;color:var(--text);line-height:1.8}
+.moment-tags{display:flex;gap:0.4rem;margin-top:0.8rem}
+.moment-tag{font-size:0.72rem;color:var(--accent);background:var(--soft);padding:0.2rem 0.6rem;border-radius:100px}
+.moment-actions{display:flex;gap:1.5rem;margin-top:1rem;padding-top:0.8rem;border-top:1px solid var(--line);font-size:0.8rem;color:var(--dim)}
+.moment-actions span{cursor:pointer;transition:color 0.15s}
+.moment-actions span:hover{color:var(--accent)}
+
+/* Contact */
+.contact{max-width:780px;margin:0 auto;padding:3rem 1.5rem 4rem;text-align:center}
+.contact-card{background:var(--card);border-radius:20px;padding:3rem 2rem;box-shadow:0 4px 24px rgba(0,0,0,0.06)}
+.contact-card h2{font-size:1.5rem;font-weight:700;color:var(--ink);margin-bottom:0.5rem}
+.contact-card p{color:var(--dim);margin-bottom:1.5rem}
+.contact-btn{display:inline-flex;align-items:center;gap:0.4rem;padding:0.7rem 1.5rem;background:var(--ink);color:#fff;border-radius:100px;font-size:0.9rem;font-weight:600;transition:all 0.2s}
+.contact-btn:hover{background:var(--accent);transform:translateY(-2px)}
+
+/* Footer */
+.footer{text-align:center;padding:2rem;color:var(--dim);font-size:0.8rem}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo"><span class="emoji">🏔️</span>林高山的AI笔记</a>
+    <ul class="nav-links">
+      <li><a href="#tutorials">教程</a></li>
+      <li><a href="#events">活动</a></li>
+      <li><a href="#moments">动态</a></li>
+      <li><a href="#contact">联系</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero-av"><img src="images/photo.webp" alt="林高山"></div>
+  <h1>把 AI 翻译成<br><span class="hl">企业能听懂</span>的语言</h1>
+  <p class="hero-sub">10 年技术研发 × 4 年 AI 商业化实战。这里记录我的教程、活动和日常思考。</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><span class="v">10+</span><span class="l">年技术</span></div>
+    <div class="hero-stat"><span class="v">5.7万+</span><span class="l">社群</span></div>
+    <div class="hero-stat"><span class="v">200+</span><span class="l">学员</span></div>
+    <div class="hero-stat"><span class="v">6位数</span><span class="l">变现</span></div>
+  </div>
+</section>
+
+<section class="section" id="tutorials">
+  <div class="section-title"><span class="icon">📚</span> 最新教程</div>
+  <div class="tut-list">
+    <div class="tut-item">
+      <div class="tut-emoji">🤖</div>
+      <div class="tut-body">
+        <div class="tut-tag-row"><span class="tut-cat">AI 办公助手</span><span class="tut-new">NEW</span></div>
+        <h3>WorkBuddy 101</h3>
+        <p>从0到1搭建企业级AI办公助手，覆盖邮件/日程/文档/会议全场景</p>
+      </div>
+      <div class="tut-arrow">→</div>
+    </div>
+    <div class="tut-item">
+      <div class="tut-emoji">⚡</div>
+      <div class="tut-body">
+        <div class="tut-tag-row"><span class="tut-cat">AI 编程</span><span class="tut-new">NEW</span></div>
+        <h3>Codex 实战指南</h3>
+        <p>用Codex实现从需求到代码的自动化，程序员效率提升10倍</p>
+      </div>
+      <div class="tut-arrow">→</div>
+    </div>
+    <div class="tut-item">
+      <div class="tut-emoji">🧠</div>
+      <div class="tut-body">
+        <div class="tut-tag-row"><span class="tut-cat">AI 原生团队</span></div>
+        <h3>Hermes Agent 搭建</h3>
+        <p>用Hermes搭建7×24h AI作战团队，1人顶1个工作室</p>
+      </div>
+      <div class="tut-arrow">→</div>
+    </div>
+    <div class="tut-item">
+      <div class="tut-emoji">🔌</div>
+      <div class="tut-body">
+        <div class="tut-tag-row"><span class="tut-cat">工具集成</span></div>
+        <h3>MCP 协议实战</h3>
+        <p>Model Context Protocol从原理到落地，让AI调用任何工具</p>
+      </div>
+      <div class="tut-arrow">→</div>
+    </div>
+    <div class="tut-item">
+      <div class="tut-emoji">⚙️</div>
+      <div class="tut-body">
+        <div class="tut-tag-row"><span class="tut-cat">自动化</span></div>
+        <h3>Agent 工作流设计</h3>
+        <p>多Agent协作工作流设计模式，从单点到全自动</p>
+      </div>
+      <div class="tut-arrow">→</div>
+    </div>
+    <div class="tut-item">
+      <div class="tut-emoji">🚀</div>
+      <div class="tut-body">
+        <div class="tut-tag-row"><span class="tut-cat">创业实战</span></div>
+        <h3>OPC 一人公司方法论</h3>
+        <p>1人+AI军团=1家公司，内容获客到变现全链路</p>
+      </div>
+      <div class="tut-arrow">→</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="events">
+  <div class="section-title"><span class="icon">📸</span> 线下活动</div>
+  <div class="event-wall">
+    <div class="event-photo">
+      <img src="images/scene1.webp" alt="">
+      <div class="caption"><div class="type">线下组局</div><h3>广州 OPC 夜校</h3><div class="date">2026.07</div></div>
+    </div>
+    <div class="event-photo">
+      <img src="images/scene2.webp" alt="">
+      <div class="caption"><div class="type">线下分享</div><h3>AI 智创汇沙龙</h3><div class="date">2026.06</div></div>
+    </div>
+    <div class="event-photo">
+      <img src="images/scene3.webp" alt="">
+      <div class="caption"><div class="type">企业培训</div><h3>企业 AI+ 内训</h3><div class="date">2026.05</div></div>
+    </div>
+    <div class="event-photo">
+      <img src="images/photo.webp" alt="">
+      <div class="caption"><div class="type">大会演讲</div><h3>AI 峰会演讲</h3><div class="date">2026.04</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="moments">
+  <div class="section-title"><span class="icon">💬</span> 票圈动态</div>
+  <div class="moment-feed">
+    <div class="moment-card">
+      <div class="moment-head">
+        <div class="moment-av">林</div>
+        <div>
+          <div class="moment-name">林高山</div>
+          <div class="moment-date">7/19</div>
+        </div>
+      </div>
+      <p class="moment-text">WorkBuddy教程上线了，这周拆了3个企业AI办公场景，发现最大的坑不是技术而是流程。技术选型只占30%，70%时间在帮客户理清工作流。AI落地的本质是流程重构。</p>
+      <div class="moment-tags"><span class="moment-tag">#WorkBuddy</span><span class="moment-tag">#AI落地</span></div>
+      <div class="moment-actions"><span>👍 32</span><span>💬 8</span></div>
+    </div>
+    <div class="moment-card">
+      <div class="moment-head">
+        <div class="moment-av">林</div>
+        <div>
+          <div class="moment-name">林高山</div>
+          <div class="moment-date">7/15</div>
+        </div>
+      </div>
+      <p class="moment-text">广州OPC夜校第8期结束，来了30+老板。最大的感受：老板们不是不想用AI，是没人帮他们把AI翻译成业务语言。这就是我的价值。</p>
+      <div class="moment-tags"><span class="moment-tag">#OPC夜校</span></div>
+      <div class="moment-actions"><span>👍 45</span><span>💬 12</span></div>
+    </div>
+    <div class="moment-card">
+      <div class="moment-head">
+        <div class="moment-av">林</div>
+        <div>
+          <div class="moment-name">林高山</div>
+          <div class="moment-date">7/10</div>
+        </div>
+      </div>
+      <p class="moment-text">用Codex写了一整天代码，体验：从需求到可运行代码只要15分钟。程序员不会失业，但不会用AI的程序员会。</p>
+      <div class="moment-tags"><span class="moment-tag">#Codex</span><span class="moment-tag">#AI编程</span></div>
+      <div class="moment-actions"><span>👍 67</span><span>💬 23</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-card">
+    <h2>聊聊合作？</h2>
+    <p>企业内训 · 课程合作 · 项目咨询</p>
+    <a href="weixin://" class="contact-btn">💬 加微信</a>
+  </div>
+</section>
+
+<footer class="footer">
+  © 2026 林高山 · 广州 · AI 落地笔记
+</footer>
+
+</body>
+</html>
