@@ -29,7 +29,7 @@ GIT_SSH_COMMAND="ssh -i ~/.ssh/gh_deploy -o IdentitiesOnly=yes" \
 ```
 
 ## 当前风格
-- **8️⃣ Apple Soft Premium**（林高山选定，2026-07-08）
+- **8️⃣ Apple Soft Premium**（林成事选定，2026-07-08）
 - 设计语言:白底 + SF Pro 字体 + 圆角 + 灰底块 + 极致留白 + Apple 系统感
 - 简历版内容:10年技术 × 4年AI / 5.7万+社群 / 广州 OPC 夜校 / Agent + OPC + 企业AI+ 三大课程
 - 4 张图:photo.webp（头像）+ scene1/2/3.webp（授课现场）
