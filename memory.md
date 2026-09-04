@@ -34,11 +34,11 @@ GIT_SSH_COMMAND="ssh -i ~/.ssh/gh_deploy -o IdentitiesOnly=yes" \
 - 简历版内容:10年技术 × 4年AI / 5.7万+社群 / 广州 OPC 夜校 / Agent + OPC + 企业AI+ 三大课程
 - 4 张图:photo.webp（头像）+ scene1/2/3.webp（授课现场）
 
-## 当前状态（2026-07-19 v2 上线）
-- v2 深红冲击风已部署上线，commit ab4080f
-- 对标必火 4980.bihuoai.com 转化结构
-- 清理了208行旧Apple风格死CSS + 修复@media花括号错位bug
-- 等Boss验收反馈
+## 当前风格（2026-07-23 v4 上线）
+- v4 refined 暖色编辑风已部署上线，commit 917673d
+- 暖米底 #faf9f6 + Georgia 衬线标题 + 棕褐金色调 + 品牌感个人门户
+- 替换了 v2 深红冲击风（879行→342行精简）
+- 源文件: outputs/v4_refined.html
 
 ## 已归档备查（不要删）
 - `/tmp/style_swiss/` - 1️⃣ Swiss International
@@ -49,6 +49,15 @@ GIT_SSH_COMMAND="ssh -i ~/.ssh/gh_deploy -o IdentitiesOnly=yes" \
 - `/tmp/style_darkacademic/` - 6️⃣ Dark Academic
 - `/tmp/style_terminal/` - 7️⃣ Terminal IDE
 - `/tmp/style_applesoft/` - 8️⃣ Apple Soft Premium ← 当前选中
+
+## 培训活动导流站升级（2026-07-19）
+- **决策**: 使用 gorsenlam.com（Boss自有品牌资产），不用 workbuddy.homes（原作者AlephAITech所有，商标风险）
+- **新增**: events.html 活动页（AI工作坊/OPC夜校/组局聚会）
+- **首页改动**: 导航栏加「培训活动」入口；hero后加近期活动导流区块（3张活动卡）
+- **活动页内容**: 即将开搞（3个活动卡）+ 往期回顾 + 扫码报名CTA + 微信浮窗
+- **WorkBuddy教程**: WorkBuddy101 fork在 GorsenLam/WorkBuddy101，内容待迁移到/guide/子路径（仓库太大clone超时，后续处理）
+- **部署**: 已push到 gh-pages + master，线上已验证生效
+- **下一步**: Boss确认活动信息后更新具体时间/价格；WorkBuddy教程内容迁移
 
 ## 历史教训（避免重复踩）
 - memory.md 之前写「gorsenlam-site2 main」是错的。真实仓库是 `gorsenlam-website`。
